@@ -3,57 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auwal Cyber Tools</title>
+<title>Auwal Sulaiman - Cybersecurity Expert</title>
 <style>
-body{font-family:Arial;background:#0a0a0a;color:#fff;margin:0}
-.header{display:flex;justify-content:space-between;padding:15px;background:#111;align-items:center}
-.lang-btn button{padding:8px 15px;margin-left:5px;border:none;border-radius:20px;cursor:pointer;font-weight:bold}
-.lang-btn .active{background:#00ff88;color:#000}
-.hero{text-align:center;padding:50px 20px}
-.hero h1{font-size:2.5em}
-.btn{display:inline-block;padding:15px 30px;background:#00ff88;color:#000;text-decoration:none;border-radius:30px;font-weight:bold;margin-top:20px}
-.card{background:#1a1a1a;padding:20px;margin:15px;border-radius:15px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial,sans-serif}
+.header{position:sticky;top:0;z-index:999;background:#000;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ff88}
+.logo{color:#00ff88;font-weight:bold;font-size:18px}
+.lang button{padding:7px 16px;border:none;border-radius:20px;font-weight:bold;cursor:pointer;margin-left:6px}
+.active-lang{background:#00ff88!important;color:#000!important}
+.inactive-lang{background:#222!important;color:#fff!important}
+.hero{text-align:center;padding:40px 20px 20px}
+.hero h1{font-size:32px;line-height:1.2}
+.hero h1 span{color:#00ff88}
+.hero p{color:#aaa;margin:15px 0;font-size:16px}
+.btn-green{display:inline-block;background:#00ff88;color:#000;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold;margin-top:10px}
+.services{padding:20px}
+.card{background:#111;border:1px solid #222;border-radius:15px;padding:20px;margin-bottom:15px;text-align:center}
+.card h3{color:#00ff88;margin:10px 0}
+.card p{color:#bbb;font-size:14px;line-height:1.5}
+.footer{text-align:center;padding:30px;color:#666;font-size:13px;border-top:1px solid #111;margin-top:20px}
+.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.5)}
 </style>
 </head>
 <body>
+
 <div class="header">
-<div><b>AUWAL CYBER TOOLS</b></div>
-<div class="lang-btn">
-<button id="btn-ha" class="active" onclick="setLang('ha')">HA</button>
-<button id="btn-en" onclick="setLang('en')">EN</button>
+<div class="logo">AUWAL TECH</div>
+<div class="lang">
+<button id="btn-ha" class="active-lang" onclick="setLang('ha')">HA</button>
+<button id="btn-en" class="inactive-lang" onclick="setLang('en')">EN</button>
 </div>
 </div>
 
 <div class="hero">
-<h1 data-ha="Kayan Aikin Cyber Na Duniya" data-en="World Class Cyber Tools">Kayan Aikin Cyber Na Duniya</h1>
-<p data-ha="Muna sayar da dukkan kayan aikin hacking da programming na zamani" data-en="We sell all modern hacking and programming tools">Muna sayar da dukkan kayan aikin hacking da programming na zamani</p>
-<a class="btn" href="https://wa.me/2349025122224" data-ha="Yi Order a WhatsApp" data-en="Order on WhatsApp">Yi Order a WhatsApp</a>
+<h1><span data-ha="Barka da zuwa! Ni ne" data-en="Welcome! I am">Barka da zuwa! Ni ne</span><br><span style="color:#00ff88">Auwal Sulaiman</span></h1>
+<p data-ha="Cybersecurity Expert | Website Developer | Computer Repair" data-en="Cybersecurity Expert | Website Developer | Computer Repair">Cybersecurity Expert | Website Developer | Computer Repair</p>
+<a class="btn-green" href="https://wa.me/2349025122224" data-ha="Tuntube ni a WhatsApp" data-en="Contact me on WhatsApp">Tuntube ni a WhatsApp</a>
+</div>
+
+<div class="services">
+
+<div class="card">
+<div style="font-size:30px">🛠️</div>
+<h3 data-ha="Gyaran Computer" data-en="Computer Repair">Gyaran Computer</h3>
+<p data-ha="Muna gyara Laptop, Windows, Virus, da duk matsalolin Computer cikin sauri da amana." data-en="We fix Laptop, Windows, Virus, and all Computer problems quickly and reliably.">Muna gyara Laptop, Windows, Virus, da duk matsalolin Computer cikin sauri da amana.</p>
+<a class="btn-green" href="https://wa.me/2349025122224?text=Sannu,%20ina%20bukatar%20gyaran%20computer" data-ha="Nemi Gyaran Computer" data-en="Request Repair">Nemi Gyaran Computer</a>
 </div>
 
 <div class="card">
-<h3 data-ha="Me Muke Bayarwa?" data-en="What We Offer?">Me Muke Bayarwa?</h3>
-<p data-ha="✓ Kayan Termux ✓ Website Design ✓ Cyber Security" data-en="✓ Termux Tools ✓ Website Design ✓ Cyber Security">✓ Kayan Termux ✓ Website Design ✓ Cyber Security</p>
+<div style="font-size:30px">🌐</div>
+<h3 data-ha="Kera Website" data-en="Website Development">Kera Website</h3>
+<p data-ha="Muna kera website mai kyau kamar wannan wanda yake aiki a waya da computer. Mai sauri da kuma na zamani." data-en="We create beautiful modern websites like this one that works perfectly on mobile and computer.">Muna kera website mai kyau kamar wannan wanda yake aiki a waya da computer. Mai sauri da kuma na zamani.</p>
+<a class="btn-green" href="https://wa.me/2349025122224?text=Sannu,%20ina%20bukatar%20website" data-ha="Nemi Website" data-en="Request Website">Nemi Website</a>
 </div>
 
 <div class="card">
-<h3 data-ha="Tuntube Mu" data-en="Contact Us">Tuntube Mu</h3>
-<p>WhatsApp: 09025122224<br>Email: auwal@cybertools.com</p>
-<a class="btn" href="https://wa.me/2349025122224" data-ha="Magana Yanzu" data-en="Chat Now">Magana Yanzu</a>
-</div>
-
-<script>
-function setLang(lang){
- document.querySelectorAll('[data-ha]').forEach(el=>{
-   el.innerText = el.getAttribute('data-'+lang);
- });
- document.getElementById('btn-ha').classList.toggle('active', lang==='ha');
- document.getElementById('btn-en').classList.toggle('active', lang==='en');
- // auto save
- localStorage.setItem('lang', lang);
-}
-// load saved language
-const saved = localStorage.getItem('lang') || 'ha';
-setLang(saved);
-</script>
-</body>
-</html>
+<div style="font-size:30px">🔐</div>
+<h3 data-ha="Tsaron Cyber" data-en="Cybersecurity">Tsaron Cyber</h3>
+<p data-ha="Muna kare maka computer da bayanan ka daga hackers da virus. Muna koyar da tsaron internet>
