@@ -1,63 +1,125 @@
 <!DOCTYPE html>
-<html lang="ha">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auwal Sulaiman - Cybersecurity Expert</title>
+<title>Auwal Tech - Cybersecurity Expert</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial,sans-serif}
-.header{position:sticky;top:0;z-index:999;background:#000;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ff88}
-.logo{color:#00ff88;font-weight:bold;font-size:18px}
-.lang button{padding:7px 16px;border:none;border-radius:20px;font-weight:bold;cursor:pointer;margin-left:6px}
-.active-lang{background:#00ff88!important;color:#000!important}
-.inactive-lang{background:#222!important;color:#fff!important}
-.hero{text-align:center;padding:40px 20px 20px}
-.hero h1{font-size:32px;line-height:1.2}
-.hero h1 span{color:#00ff88}
-.hero p{color:#aaa;margin:15px 0;font-size:16px}
-.btn-green{display:inline-block;background:#00ff88;color:#000;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold;margin-top:10px}
-.services{padding:20px}
-.card{background:#111;border:1px solid #222;border-radius:15px;padding:20px;margin-bottom:15px;text-align:center}
-.card h3{color:#00ff88;margin:10px 0}
-.card p{color:#bbb;font-size:14px;line-height:1.5}
-.footer{text-align:center;padding:30px;color:#666;font-size:13px;border-top:1px solid #111;margin-top:20px}
-.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.5)}
+body{background:#000;color:#fff;font-family:Arial}
+.top{position:sticky;top:0;background:#000;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ff88;z-index:100}
+.logo{color:#00ff88;font-weight:bold}
+.top button{padding:8px 18px;border-radius:20px;border:none;font-weight:bold;cursor:pointer}
+.btn-ha{background:#00ff88;color:#000}
+.btn-en{background:#333;color:#fff}
+.active{background:#00ff88!important;color:#000!important}
+.inactive{background:#333!important;color:#fff!important}
+.hero{text-align:center;padding:40px 20px}
+.hero h1{font-size:34px;color:#00ff88;line-height:1.2}
+.hero h1 span{color:#fff;display:block;font-size:20px;margin-top:10px}
+.hero p{color:#aaa;margin:15px 0}
+.btn{ background:#00ff88;color:#000;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:15px}
+.box{background:#111;border:1px solid #222;border-radius:15px;padding:20px;margin:15px;text-align:center}
+.box h3{color:#00ff88;margin:10px 0}
+.box p{color:#ccc;font-size:14px}
+.foot{text-align:center;padding:20px;color:#555;border-top:1px solid #111;margin-top:20px}
+.wa{position:fixed;bottom:20px;right:20px;background:#25D366;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none}
 </style>
 </head>
 <body>
 
-<div class="header">
+<div class="top">
 <div class="logo">AUWAL TECH</div>
-<div class="lang">
-<button id="btn-ha" class="active-lang" onclick="setLang('ha')">HA</button>
-<button id="btn-en" class="inactive-lang" onclick="setLang('en')">EN</button>
+<div>
+<button id="b-ha" class="active" onclick="changeLang('ha')">HA</button>
+<button id="b-en" class="inactive" onclick="changeLang('en')">EN</button>
 </div>
 </div>
 
 <div class="hero">
-<h1><span data-ha="Barka da zuwa! Ni ne" data-en="Welcome! I am">Barka da zuwa! Ni ne</span><br><span style="color:#00ff88">Auwal Sulaiman</span></h1>
-<p data-ha="Cybersecurity Expert | Website Developer | Computer Repair" data-en="Cybersecurity Expert | Website Developer | Computer Repair">Cybersecurity Expert | Website Developer | Computer Repair</p>
-<a class="btn-green" href="https://wa.me/2349025122224" data-ha="Tuntube ni a WhatsApp" data-en="Contact me on WhatsApp">Tuntube ni a WhatsApp</a>
+<h1 id="t1">Barka da zuwa! Ni ne<br>Auwal Sulaiman</h1>
+<p id="t2">Cybersecurity Expert | Website Developer | Computer Repair</p>
+<a id="t3" class="btn" href="https://wa.me/2349025122224">Tuntube ni a WhatsApp</a>
 </div>
 
-<div class="services">
-
-<div class="card">
-<div style="font-size:30px">🛠️</div>
-<h3 data-ha="Gyaran Computer" data-en="Computer Repair">Gyaran Computer</h3>
-<p data-ha="Muna gyara Laptop, Windows, Virus, da duk matsalolin Computer cikin sauri da amana." data-en="We fix Laptop, Windows, Virus, and all Computer problems quickly and reliably.">Muna gyara Laptop, Windows, Virus, da duk matsalolin Computer cikin sauri da amana.</p>
-<a class="btn-green" href="https://wa.me/2349025122224?text=Sannu,%20ina%20bukatar%20gyaran%20computer" data-ha="Nemi Gyaran Computer" data-en="Request Repair">Nemi Gyaran Computer</a>
+<div class="box">
+<div style="font-size:32px">🛠️</div>
+<h3 id="t4">Gyaran Computer</h3>
+<p id="t5">Muna gyara Laptop, Windows, Virus, da duk matsalolin Computer cikin sauri da amana.</p>
+<a id="t6" class="btn" href="https://wa.me/2349025122224?text=Ina%20bukatar%20gyaran%20computer">Nemi Gyaran Computer</a>
 </div>
 
-<div class="card">
-<div style="font-size:30px">🌐</div>
-<h3 data-ha="Kera Website" data-en="Website Development">Kera Website</h3>
-<p data-ha="Muna kera website mai kyau kamar wannan wanda yake aiki a waya da computer. Mai sauri da kuma na zamani." data-en="We create beautiful modern websites like this one that works perfectly on mobile and computer.">Muna kera website mai kyau kamar wannan wanda yake aiki a waya da computer. Mai sauri da kuma na zamani.</p>
-<a class="btn-green" href="https://wa.me/2349025122224?text=Sannu,%20ina%20bukatar%20website" data-ha="Nemi Website" data-en="Request Website">Nemi Website</a>
+<div class="box">
+<div style="font-size:32px">🌐</div>
+<h3 id="t7">Kera Website</h3>
+<p id="t8">Muna kera website mai kyau kamar wannan wanda yake aiki a waya da computer. Mai sauri da kuma na zamani.</p>
+<a id="t9" class="btn" href="https://wa.me/2349025122224?text=Ina%20bukatar%20website">Nemi Website</a>
 </div>
 
-<div class="card">
-<div style="font-size:30px">🔐</div>
-<h3 data-ha="Tsaron Cyber" data-en="Cybersecurity">Tsaron Cyber</h3>
-<p data-ha="Muna kare maka computer da bayanan ka daga hackers da virus. Muna koyar da tsaron internet>
+<div class="box">
+<div style="font-size:32px">🔐</div>
+<h3 id="t10">Tsaron Cyber</h3>
+<p id="t11">Muna kare maka computer da bayanan ka daga hackers da virus.</p>
+<a id="t12" class="btn" href="https://wa.me/2349025122224?text=Ina%20bukatar%20tsaron%20cyber">Nemi Tsaro</a>
+</div>
+
+<div class="box">
+<h3 id="t13">Tuntube Mu</h3>
+<p>WhatsApp: 09025122224<br>Email: auwaltech@gmail.com<br>Abuja, Nigeria</p>
+<br>
+<a id="t14" class="btn" href="https://wa.me/2349025122224">Magana Yanzu</a>
+</div>
+
+<div class="foot">© 2026 Auwal Sulaiman - Built in Nigeria 🇳🇬</div>
+<a class="wa" href="https://wa.me/2349025122224">💬</a>
+
+<script>
+const hausa = {
+t1: "Barka da zuwa! Ni ne\nAuwal Sulaiman",
+t2: "Cybersecurity Expert | Website Developer | Computer Repair",
+t3: "Tuntube ni a WhatsApp",
+t4: "Gyaran Computer",
+t5: "Muna gyara Laptop, Windows, Virus, da duk matsalolin Computer cikin sauri da amana.",
+t6: "Nemi Gyaran Computer",
+t7: "Kera Website",
+t8: "Muna kera website mai kyau kamar wannan wanda yake aiki a waya da computer. Mai sauri da kuma na zamani.",
+t9: "Nemi Website",
+t10: "Tsaron Cyber",
+t11: "Muna kare maka computer da bayanan ka daga hackers da virus.",
+t12: "Nemi Tsaro",
+t13: "Tuntube Mu",
+t14: "Magana Yanzu"
+};
+const english = {
+t1: "Welcome! I am\nAuwal Sulaiman",
+t2: "Cybersecurity Expert | Website Developer | Computer Repair",
+t3: "Contact me on WhatsApp",
+t4: "Computer Repair",
+t5: "We fix Laptop, Windows, Virus, and all computer problems quickly and reliably.",
+t6: "Request Repair",
+t7: "Website Development",
+t8: "We create beautiful modern websites like this that works on phone and computer. Fast and modern.",
+t9: "Request Website",
+t10: "Cybersecurity",
+t11: "We protect your computer and data from hackers and viruses.",
+t12: "Get Protection",
+t13: "Contact Us",
+t14: "Chat Now"
+};
+
+function changeLang(lang){
+let dict = lang==='ha'? hausa : english;
+for(let id in dict){
+  let el = document.getElementById(id);
+  if(el) el.innerText = dict[id];
+}
+document.getElementById('b-ha').className = lang==='ha'? 'active' : 'inactive';
+document.getElementById('b-en').className = lang==='en'? 'active' : 'inactive';
+localStorage.setItem('lang', lang);
+}
+
+let saved = localStorage.getItem('lang') || 'ha';
+changeLang(saved);
+</script>
+</body>
+</html>
