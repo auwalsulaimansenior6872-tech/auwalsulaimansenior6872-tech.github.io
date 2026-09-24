@@ -3,50 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auwal Sulaiman - Cyber Expert | R6872-TECH</title>
+<title>Auwal Cyber Tools</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial;background:#0a0a0f;color:white}
-header{background:#111;padding:20px;text-align:center;border-bottom:3px solid #00ff88}
-.logo{font-size:28px;font-weight:bold;color:#00ff88}
-.hero{padding:60px 20px;text-align:center;background:linear-gradient(135deg,#0a0a0f,#111)}
-.hero h1{font-size:32px;margin-bottom:10px}
-.hero span{color:#00ff88}
-.hero p{color:#aaa;margin:15px 0 30px}
-.btn{display:inline-block;padding:15px 30px;margin:10px;background:#00ff88;color:black;font-weight:bold;text-decoration:none;border-radius:8px}
-.services{display:grid;grid-template-columns:1fr;gap:20px;padding:30px;max-width:600px;margin:auto}
-.card{background:#15151c;padding:25px;border-radius:12px;border:1px solid #222;text-align:center}
-.card h3{color:#00ff88;margin-bottom:10px}
-.card p{color:#aaa;font-size:14px;margin-bottom:15px}
-.card a{display:block;padding:12px;background:#00ff88;color:black;font-weight:bold;text-decoration:none;border-radius:6px}
-.card a:hover{background:white}
-footer{text-align:center;padding:30px;color:#666}
+body{font-family:Arial;background:#0a0a0a;color:#fff;margin:0}
+.header{display:flex;justify-content:space-between;padding:15px;background:#111;align-items:center}
+.lang-btn button{padding:8px 15px;margin-left:5px;border:none;border-radius:20px;cursor:pointer;font-weight:bold}
+.lang-btn .active{background:#00ff88;color:#000}
+.hero{text-align:center;padding:50px 20px}
+.hero h1{font-size:2.5em}
+.btn{display:inline-block;padding:15px 30px;background:#00ff88;color:#000;text-decoration:none;border-radius:30px;font-weight:bold;margin-top:20px}
+.card{background:#1a1a1a;padding:20px;margin:15px;border-radius:15px}
 </style>
 </head>
 <body>
-<header><div class="logo">R6872-TECH</div></header>
-<section class="hero">
-<h1>Barka da zuwa! Ni ne <span>Auwal Sulaiman</span></h1>
-<p>Cybersecurity Expert | Website Developer | Computer Repair</p>
-<a class="btn" href="https://wa.me/2349025122224?text=Sannu%20Auwal%2C%20naga%20website%20dinka%20ina%20son%20aiki">Tuntube ni a WhatsApp</a>
-</section>
-<div class="services">
+<div class="header">
+<div><b>AUWAL CYBER TOOLS</b></div>
+<div class="lang-btn">
+<button id="btn-ha" class="active" onclick="setLang('ha')">HA</button>
+<button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+</div>
+
+<div class="hero">
+<h1 data-ha="Kayan Aikin Cyber Na Duniya" data-en="World Class Cyber Tools">Kayan Aikin Cyber Na Duniya</h1>
+<p data-ha="Muna sayar da dukkan kayan aikin hacking da programming na zamani" data-en="We sell all modern hacking and programming tools">Muna sayar da dukkan kayan aikin hacking da programming na zamani</p>
+<a class="btn" href="https://wa.me/2349025122224" data-ha="Yi Order a WhatsApp" data-en="Order on WhatsApp">Yi Order a WhatsApp</a>
+</div>
+
 <div class="card">
-<h3>🛠️ Gyaran Computer</h3>
-<p>Muna gyara Laptop, Windows, Virus, da duk matsalolin Computer.</p>
-<a href="https://wa.me/2349025122224?text=Sannu%20Auwal%2C%20ina%20son%20GYARAN%20COMPUTER">Nemi Gyaran Computer</a>
+<h3 data-ha="Me Muke Bayarwa?" data-en="What We Offer?">Me Muke Bayarwa?</h3>
+<p data-ha="✓ Kayan Termux ✓ Website Design ✓ Cyber Security" data-en="✓ Termux Tools ✓ Website Design ✓ Cyber Security">✓ Kayan Termux ✓ Website Design ✓ Cyber Security</p>
 </div>
+
 <div class="card">
-<h3>🌐 Kera Website</h3>
-<p>Muna kera website mai kyau kamar wannan wanda yake aiki a waya da computer.</p>
-<a href="https://wa.me/2349025122224?text=Sannu%20Auwal%2C%20ina%20son%20a%20kera%20min%20WEBSITE">Nemi Website</a>
+<h3 data-ha="Tuntube Mu" data-en="Contact Us">Tuntube Mu</h3>
+<p>WhatsApp: 09025122224<br>Email: auwal@cybertools.com</p>
+<a class="btn" href="https://wa.me/2349025122224" data-ha="Magana Yanzu" data-en="Chat Now">Magana Yanzu</a>
 </div>
-<div class="card">
-<h3>🔒 Cybersecurity Check</h3>
-<p>Binciken tsaron website da kariya daga hackers.</p>
-<a href="https://wa.me/2349025122224?text=Sannu%20Auwal%2C%20ina%20son%20aikin%20CYBERSECURITY">Nemi Tsaro</a>
-</div>
-</div>
-<footer>© 2026 Auwal Sulaiman - 09025122224 | R6872-TECH</footer>
+
+<script>
+function setLang(lang){
+ document.querySelectorAll('[data-ha]').forEach(el=>{
+   el.innerText = el.getAttribute('data-'+lang);
+ });
+ document.getElementById('btn-ha').classList.toggle('active', lang==='ha');
+ document.getElementById('btn-en').classList.toggle('active', lang==='en');
+ // auto save
+ localStorage.setItem('lang', lang);
+}
+// load saved language
+const saved = localStorage.getItem('lang') || 'ha';
+setLang(saved);
+</script>
 </body>
 </html>
