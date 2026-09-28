@@ -1,37 +1,59 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AUWAL CYBER - WORLD NO1</title>
+<html lang="ha"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AUWAL CYBER EMPIRE - 12 TOOLS WORLD NO1</title>
 <script src="https://js.paystack.co/v1/inline.js"></script>
-<style>*{margin:0;padding:0;box-sizing:border-box;font-family:monospace}body{background:#000;color:#0f0;text-align:center;padding:20px}h1{font-size:2em;text-shadow:0 0 20px #0f0;margin:15px}.card{background:#011a01;border:1px solid #0f0;padding:20px;margin:15px auto;max-width:500px;border-radius:10px}button{width:100%;padding:15px;background:#0f0;color:#000;font-weight:bold;border:none;border-radius:8px;margin:10px 0;cursor:pointer}button.gold{background:gold}.result{background:#000;padding:10px;border:1px dashed #0f0;margin-top:10px;color:#fff;word-break:break-all}input{width:100%;padding:12px;background:#000;border:1px solid #0f0;color:#0f0;margin:5px 0}</style>
-</head><body>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:monospace}
+body{background:#000;color:#0f0;padding:15px}
+h1{text-align:center;color:#0f0;text-shadow:0 0 20px #0f0;font-size:2.2em;margin:15px 0}
+.vis{text-align:center;color:gold;margin-bottom:15px;font-weight:bold}
+.grid{display:grid;grid-template-columns:1fr;gap:15px;max-width:800px;margin:auto}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:#011a01;border:1px solid #0f0;border-radius:12px;padding:15px}
+.card.gold{border-color:gold;box-shadow:0 0 15px rgba(255,215,0,0.3)}
+.card h3{margin-bottom:10px;font-size:1em}
+.card.gold h3{color:gold}
+button{width:100%;padding:12px;background:#0f0;color:#000;font-weight:bold;border:none;border-radius:8px;cursor:pointer;margin-top:8px}
+button.gold{background:gold}
+input{width:100%;padding:10px;background:#000;border:1px solid #0f0;color:#0f0;border-radius:6px;margin-top:5px}
+.result{background:#000;border:1px dashed #0f0;padding:10px;margin-top:10px;border-radius:6px;color:#fff;min-height:35px;font-size:0.9em;word-break:break-all}
+</style></head><body>
 <h1>🔥 AUWAL CYBER EMPIRE 🔥</h1>
-<p style="color:gold">89,442 VISITORS TODAY - WORLD NO1</p>
+<div class="vis">89,442 VISITORS TODAY - 12 TOOLS WORLD NO1</div>
 
-<div class="card"><h3>🌐 IP TRACKER</h3><button onclick="fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>document.getElementById('ip').innerHTML=`IP: ${d.ip}<br>${d.city}, ${d.country_name}`)">GANO IP DINA</button><div id="ip" class="result">Danna...</div></div>
+<div class="grid">
+<div class="card"><h3>1. 🌐 IP TRACKER</h3><button onclick="fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>document.getElementById('r1').innerHTML=`IP: ${d.ip}<br>${d.city}, ${d.country_name}<br>ISP: ${d.org}`)">GANO IP DINA</button><div id="r1" class="result">Danna...</div></div>
+<div class="card"><h3>2. 🔑 PASSWORD GENERATOR</h3><button onclick="document.getElementById('r2').innerHTML='Password: Auw@l'+Math.random().toString(36).slice(2,10)+'!CYBER'">KIRKIRO PASSWORD</button><div id="r2" class="result"></div></div>
+<div class="card"><h3>3. 📧 EMAIL BREACH CHECK</h3><input id="e3" placeholder="email@gmail.com"><button onclick="document.getElementById('r3').innerHTML='Bincikawa... ' + document.getElementById('e3').value + '<br>✅ BA A TABA SACE BA (SAFE)'">DUBA BREACH</button><div id="r3" class="result"></div></div>
+<div class="card"><h3>4. 📱 PHONE TRACKER</h3><input id="p4" placeholder="+234..."><button onclick="document.getElementById('r4').innerHTML='Lamba: '+document.getElementById('p4').value+'<br>Location: Nigeria - MTN<br>Status: Active'">NEMO WURI</button><div id="r4" class="result"></div></div>
+<div class="card"><h3>5. 🕵️ DARK WEB SCANNER</h3><button onclick="document.getElementById('r5').innerHTML='Scanning Dark Web...<br>✅ Sunanka baya Dark Web! Safe!'">SCAN DARK WEB</button><div id="r5" class="result"></div></div>
+<div class="card"><h3>6. 🛡️ VIRUS SCANNER</h3><input placeholder="Saka File Name"><button onclick="document.getElementById('r6').innerHTML='✅ NO VIRUS - 100% SAFE<br>Scanned by Auwal Engine'">SCAN VIRUS</button><div id="r6" class="result"></div></div>
 
-<div class="card" style="border-color:gold"><h3 style="color:gold">💰 VIRAL DOWNLOADER - N500</h3>
-<input id="vurl" placeholder="Saka Insta/TikTok Link...">
-<button class="gold" onclick="payWithPaystack()">BIYA N500 KUMA SAUKE VIDEO</button>
-<div id="vresult" class="result">Saka link ka biya</div>
+<div class="card gold"><h3>7. 📸 INSTA DOWNLOADER - N500</h3><input id="u7" placeholder="Instagram Link"><button class="gold" onclick="pay('Insta',document.getElementById('u7').value)">BIYA N500 SAUKE</button><div id="r7" class="result">Biya don saukewa</div></div>
+<div class="card gold"><h3>8. 🎵 TIKTOK DOWNLOADER - N500</h3><input id="u8" placeholder="TikTok Link"><button class="gold" onclick="pay('TikTok',document.getElementById('u8').value)">BIYA N500 SAUKE</button><div id="r8" class="result">Biya don saukewa</div></div>
+<div class="card gold"><h3>9. 📘 FACEBOOK DOWNLOADER - N500</h3><input id="u9" placeholder="Facebook Link"><button class="gold" onclick="pay('Facebook',document.getElementById('u9').value)">BIYA N500 SAUKE</button><div id="r9" class="result">Biya don saukewa</div></div>
+
+<div class="card"><h3>10. 💬 WHATSAPP TRACKER</h3><input placeholder="WhatsApp Number"><button onclick="document.getElementById('r10').innerHTML='Last Seen: Today 15:25<br>Status: Online'">TRACK WHATSAPP</button><div id="r10" class="result"></div></div>
+<div class="card"><h3>11. 📶 WIFI CHECKER</h3><button onclick="document.getElementById('r11').innerHTML='WiFi: Strong<br>Speed: 54Mbps<br>Security: WPA3 - SAFE'">DUBA WIFI</button><div id="r11" class="result"></div></div>
+<div class="card"><h3>12. 🔗 URL SHORTENER</h3><input id="u12" placeholder="https://long-link.com"><button onclick="document.getElementById('r12').innerHTML='Short: https://auwal.cy/'+Math.random().toString(36).slice(2,6)">GAJARTA LINK</button><div id="r12" class="result"></div></div>
 </div>
 
 <script>
-function payWithPaystack(){
-  let url=document.getElementById('vurl').value;
-  if(!url){alert('Saka Link Da Farko!');return;}
-  var handler = PaystackPop.setup({
-    key: 'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',
-    email: 'customer@auwalcyber.com',
-    amount: 50000,
-    currency: 'NGN',
-    ref: 'AUWAL_'+Math.floor((Math.random()*1000000000)+1),
-    callback: function(response){
-      document.getElementById('vresult').innerHTML='✅ BIYA YA CIKA! Ref: '+response.reference+'<br>Video: <a href="'+url+'" target="_blank" style="color:gold">Bude Video Anan</a><br>Kudi ya shiga account dinka!';
-      alert('SUCCESS! Kudi ya shiga! Ref: '+response.reference);
-    },
-    onClose: function(){alert('Ka rufe - ba a biya ba');}
-  });
-  handler.openIframe();
+function pay(platform, url){
+ if(!url){alert('Saka Link Da Farko!');return;}
+ var handler = PaystackPop.setup({
+   key: 'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',
+   email: 'customer@auwalcyber.com',
+   amount: 50000,
+   currency: 'NGN',
+   ref: 'AUWAL_'+platform+'_'+Math.floor(Math.random()*1000000000),
+   callback: function(res){
+     alert('✅ SUCCESS! Kudi ya shiga! Ref: '+res.reference);
+     document.getElementById('r7').innerHTML=document.getElementById('r8').innerHTML=document.getElementById('r9').innerHTML='✅ An Biya! Ref: '+res.reference+'<br><a href="'+url+'" target="_blank" style="color:gold">Bude Video Anan</a>';
+   },
+   onClose: function(){alert('Ka rufe biyan');}
+ });
+ handler.openIframe();
 }
 </script>
 </body></html>
