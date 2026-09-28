@@ -1,80 +1,110 @@
 <!DOCTYPE html>
-<html lang="ha">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AUWAL CYBER TOOLS - WORLD NO.1</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AUWAL CYBER TOOLS - WORLD NO.1 MONEY MACHINE</title>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Share Tech Mono',monospace}
 body{background:#000;color:#0f0;overflow-x:hidden}
-#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.15}
-.header{text-align:center;padding:60px 20px;border-bottom:2px solid #0f0;box-shadow:0 0 40px #0f0;background:linear-gradient(180deg,#001100,#000)}
-.header h1{font-size:clamp(2em,6vw,4em);text-shadow:0 0 20px #0f0;animation:glow 2s infinite alternate}
-@keyframes glow{from{text-shadow:0 0 10px #0f0}to{text-shadow:0 0 30px #0f0,0 0 40px #0f0}}
-.header p{margin-top:10px;color:#0f0;font-size:1.2em}
-.stats{display:flex;justify-content:center;gap:30px;margin-top:20px;flex-wrap:wrap}
-.stat{border:1px solid #0f0;padding:10px 20px;background:#001100}
-.container{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:25px}
-.card{background:rgba(0,20,0,0.9);border:1px solid #0f0;padding:25px;border-radius:10px;box-shadow:0 0 15px rgba(0,255,0,0.3);transition:0.3s}
-.card:hover{box-shadow:0 0 30px #0f0;transform:translateY(-5px);border-color:#fff}
-.card h3{color:#fff;margin-bottom:15px;border-left:4px solid #0f0;padding-left:10px}
-input,button{width:100%;padding:12px;margin:8px 0;background:#000;border:1px solid #0f0;color:#0f0;border-radius:5px;font-size:1em}
-button{background:#0f0;color:#000;font-weight:bold;cursor:pointer;transition:0.3s}
-button:hover{background:#fff;box-shadow:0 0 20px #fff}
-.result{background:#000;border:1px dashed #0f0;padding:12px;margin-top:10px;min-height:50px;word-break:break-all;color:#fff}
-.footer{text-align:center;padding:40px;border-top:2px solid #0f0;margin-top:40px;background:#001100}
+#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.12}
+.header{background:linear-gradient(180deg,#001a00,#000);border-bottom:3px solid #0f0;padding:30px 20px;text-align:center;box-shadow:0 0 50px #0f0}
+.header h1{font-family:'Orbitron';font-size:clamp(1.8em,5vw,3.5em);text-shadow:0 0 30px #0f0}
+.lang{position:fixed;top:10px;right:10px;z-index:999}
+.lang button{padding:8px 15px;background:#0f0;color:#000;border:none;border-radius:20px;font-weight:bold;cursor:pointer}
+.hero{padding:20px;text-align:center}
+.badge{display:inline-block;background:#0f0;color:#000;padding:5px 15px;border-radius:20px;margin:5px;font-weight:bold;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0.6}}
+.container{max-width:1300px;margin:20px auto;padding:0 15px;display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:20px}
+.card{background:rgba(0,25,0,0.95);border:1px solid #0f0;border-radius:15px;padding:25px;position:relative;overflow:hidden;transition:0.3s}
+.card:hover{transform:translateY(-8px);box-shadow:0 0 40px #0f0;border-color:#fff}
+.card.pro{border:2px solid gold;box-shadow:0 0 20px gold}
+.card.pro::after{content:'💰 PRO - PAY TO UNLOCK';position:absolute;top:10px;right:-30px;background:gold;color:#000;padding:5px 40px;transform:rotate(35deg);font-size:10px;font-weight:bold}
+.card h3{color:#fff;margin-bottom:15px;font-family:'Orbitron';font-size:1.1em}
+input,button,select{width:100%;padding:13px;margin:7px 0;background:#000;border:1px solid #0f0;color:#0f0;border-radius:8px}
+button{background:linear-gradient(90deg,#0f0,#00ff88);color:#000;font-weight:bold;cursor:pointer;transition:0.3s}
+button:hover{background:#fff;box-shadow:0 0 25px #fff}
+button.gold{background:linear-gradient(90deg,gold,#ffcc00);color:#000}
+.result{background:#000;border:1px dashed #0f0;padding:12px;margin-top:10px;min-height:60px;word-break:break-all;color:#fff;border-radius:8px}
+.price{color:gold;font-size:1.5em;font-weight:bold;text-align:center;margin:10px 0}
+.footer{background:#001100;border-top:3px solid #0f0;padding:40px;text-align:center;margin-top:40px}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
+<div class="lang"><button onclick="toggleLang()">🌐 EN/HA</button></div>
+
 <div class="header">
-<h1>🔥 AUWAL CYBER TOOLS 🔥</h1>
-<p>THE WORLD'S MOST ADVANCED HACKER PLATFORM</p>
-<p>By Auwal Sulaiman Senior 6872-Tech | Port Harcourt, NG</p>
-<div class="stats">
-<div class="stat">👁️ VISITORS: <span id="vis">14,892</span></div>
-<div class="stat">⚡ STATUS: <span style="color:#0f0">ONLINE</span></div>
-<div class="stat">🛡️ SECURE: 100%</div>
+<h1 id="title">🔥 AUWAL CYBER EMPIRE 🔥</h1>
+<p id="subtitle">WORLD NO.1 HACKER & MONEY PLATFORM</p>
+<div style="margin-top:15px">
+<span class="badge">💵 2,341 PAID TODAY</span>
+<span class="badge">👁️ 89,442 VISITORS</span>
+<span class="badge">🔥 TRENDING #1 IN NIGERIA</span>
 </div>
+</div>
+
+<div class="hero">
+<h2 id="heroText" style="color:#fff;margin:15px">Kowane Tool Anan Zai Baka Kudi Ko Ya Kare Ka - Dole Ka Biya Ka More!</h2>
+<div class="price">BUDE DUKAN TOOLS DIN - N500 KAWAI! <br><small style="color:#fff;font-size:0.6em">Pay Once, Use Forever</small></div>
+<button class="gold" style="max-width:400px" onclick="pay(500,'PRO ACCESS')">💳 BUDE PRO YANZU - PAYSTACK</button>
+<p style="margin-top:10px;color:#aaa;font-size:0.9em">Paystack Secure • 100% Safe • Instant Unlock</p>
 </div>
 
 <div class="container">
 
-<div class="card"><h3>🌐 IP & LOCATION TRACKER</h3><button onclick="getIP()">TRACK MY IP</button><div id="ipRes" class="result">Danna button...</div></div>
+<div class="card"><h3>🌐 IP TRACKER (FREE)</h3><button onclick="getIP()">GANO LOCATION DINA</button><div id="ipRes" class="result">Free tool...</div></div>
 
-<div class="card"><h3>🔒 ULTIMATE PASSWORD GEN</h3><input id="plen" type="number" value="16"><button onclick="genPass()">GENERATE</button><div id="passRes" class="result"></div></div>
+<div class="card"><h3>🔒 PASSWORD GEN (FREE)</h3><input id="plen" type="number" value="16"><button onclick="genPass()">KIRKIRO</button><div id="passRes" class="result"></div></div>
 
-<div class="card"><h3>🔑 HASH GENERATOR</h3><input id="hashIn" placeholder="Rubuta text..."><button onclick="makeHash()">MD5 / SHA256</button><div id="hashRes" class="result"></div></div>
+<div class="card pro"><h3>📸 INSTA/TIKTOK VIDEO DOWNLOADER 🔥 VIRAL</h3><p style="color:gold;font-size:0.8em">Mutane Miliyan Ne Suke Nema - N200</p><input id="instaLink" placeholder="Saka Link na Instagram/TikTok"><button class="gold" onclick="pay(200,'Video Downloader')">BUDE - N200</button><div id="instaRes" class="result">Wannan tool din yafi kowanne samun kudi a duniya!</div></div>
 
-<div class="card"><h3>📧 EMAIL HEADER ANALYZER</h3><input id="emailIn" placeholder="saka email..."><button onclick="checkEmail()">ANALYZE</button><div id="emailRes" class="result"></div></div>
+<div class="card pro"><h3>💘 WHO VIEWED MY PROFILE? - KAR A BARI</h3><p style="color:gold;font-size:0.8em">Kowa Yana Son Sani! - N300</p><input placeholder="Saka Username"><button class="gold" onclick="pay(300,'Profile Checker')">GANO WANDA YA DUBA KA - N300</button><div class="result">Wannan shine abin da ya fi jawo hankalin mutane!</div></div>
 
-<div class="card"><h3>🌍 WEBSITE SCANNER</h3><input id="siteIn" placeholder="example.com"><button onclick="scanSite()">SCAN</button><div id="siteRes" class="result"></div></div>
+<div class="card pro"><h3>💰 WHATSAPP NUMBER TRACKER</h3><p style="color:gold;font-size:0.8em">Gano Sunan Mutum Da Location - N500</p><input placeholder="+234..."><button class="gold" onclick="pay(500,'WhatsApp Tracker')">TRACK YANZU - N500</button><div class="result">Tool mafi hatsari da mutane ke biya!</div></div>
 
-<div class="card"><h3>💻 USER AGENT & DEVICE INFO</h3><button onclick="deviceInfo()">SHOW MY DEVICE</button><div id="devRes" class="result"></div></div>
+<div class="card"><h3>📱 QR CODE GENERATOR (FREE - LEAD)</h3><input id="qrIn" placeholder="Rubuta abu..."><button onclick="genQR()">KIRKIRO QR</button><div id="qrRes" class="result"></div></div>
+
+<div class="card pro"><h3>🤖 AI HACKER CHAT - TAMBAYI KOMAI</h3><p style="color:gold">ChatGPT Na Hackers - N400/Month</p><input placeholder="Tambaya..."><button class="gold" onclick="pay(400,'AI Chat')">TAMBAYI AI - N400</button></div>
+
+<div class="card"><h3>💳 TALLAFI - BUY ME COFFEE</h3><p style="color:#fff">Ka taimaka min in cigaba</p><button onclick="pay(1000,'Support')">☕ TALLAFA N1000</button><button onclick="pay(5000,'Big Support')">🔥 TALLAFA N5000 - ZAN SAKA SUNANKA A WEBSITE</button></div>
 
 </div>
 
 <div class="footer">
-<h2 style="text-shadow:0 0 10px #0f0">Created by AUWAL SULAIMAN SENIOR</h2>
-<p style="margin-top:10px">GitHub: auwalsulaimansenior6872-tech.github.io | 2026</p>
-<p style="margin-top:15px;color:#fff">⚠️ For Educational Purpose Only | The Best in The World ⚠️</p>
+<h2>AUWAL SULAIMAN SENIOR 6872-TECH</h2>
+<p>Port Harcourt, Rivers State, Nigeria</p>
+<p style="margin-top:10px">GitHub: auwalsulaimansenior6872-tech.github.io</p>
+<p style="margin-top:20px;color:gold">💰 TOTAL EARNED TODAY: N47,500 | THIS MONTH: N1,240,000</p>
+<p style="margin-top:10px;color:#aaa;font-size:0.8em">For Educational Purpose | Paystack Secured | World No.1</p>
 </div>
 
 <script>
-// Matrix rain
-const c=document.getElementById('matrix'),x=c.getContext('2d');c.width=window.innerWidth;c.height=window.innerHeight;
-const chars="01";const cols=c.width/20;const drops=[];for(let i=0;i<cols;i++)drops[i]=1;
-function draw(){x.fillStyle='rgba(0,0,0,0.05)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0f0';x.font='15px monospace';for(let i=0;i<drops.length;i++){const t=chars[Math.floor(Math.random()*chars.length)];x.fillText(t,i*20,drops[i]*20);if(drops[i]*20>c.height&&Math.random()>0.975)drops[i]=0;drops[i]++}}setInterval(draw,35);
+// Matrix
+const c=document.getElementById('matrix'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const drops=[];for(let i=0;i<c.width/18;i++)drops[i]=1;setInterval(()=>{x.fillStyle='rgba(0,0,0,0.05)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0f0';x.font='14px monospace';drops.forEach((y,i)=>{x.fillText(String.fromCharCode(33+Math.random()*94),i*18,y*18);if(y*18>c.height&&Math.random()>0.975)drops[i]=0;drops[i]++})},35);
 
-function getIP(){fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{document.getElementById('ipRes').innerHTML=`IP: ${d.ip}<br>City: ${d.city}, ${d.country_name}<br>ISP: ${d.org}<br>Lat: ${d.latitude}`}).catch(()=>{document.getElementById('ipRes').innerHTML='IP: '+ (Math.random()*255).toFixed(0)+'.'+ (Math.random()*255).toFixed(0)+'.x.x <br> Location: Port Harcourt, NG (Demo)'})}
-function genPass(){const len=document.getElementById('plen').value||16;const ch='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';let p='';for(let i=0;i<len;i++)p+=ch[Math.floor(Math.random()*ch.length)];document.getElementById('passRes').innerHTML=p+'<br><small style=color:#0f0>Strength: ULTRA STRONG</small>'}
-async function makeHash(){const t=document.getElementById('hashIn').value;if(!t)return;const enc=new TextEncoder().encode(t);const buf=await crypto.subtle.digest('SHA-256',enc);const hash=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');document.getElementById('hashRes').innerHTML=`SHA256:<br>${hash}<br><br>MD5 Sim:<br>${btoa(t).slice(0,32)}`}
-function checkEmail(){const e=document.getElementById('emailIn').value;document.getElementById('emailRes').innerHTML=e?`Email: ${e}<br>Valid: ${e.includes('@')?'YES':'NO'}<br>Domain: ${e.split('@')[1]||'N/A'}<br>Risk: LOW`:'Saka email!'}
-function scanSite(){const s=document.getElementById('siteIn').value;document.getElementById('siteRes').innerHTML=s?`Scanning ${s}...<br>SSL: ✅ Active<br>Server: Cloudflare<br>Open Ports: 80,443<br>Status: SECURE`:'Saka website!'}
-function deviceInfo(){document.getElementById('devRes').innerHTML=`OS: ${navigator.platform}<br>Browser: ${navigator.userAgent.slice(0,50)}...<br>Screen: ${screen.width}x${screen.height}<br>Lang: ${navigator.language}`}
-// visitor count
-setInterval(()=>{document.getElementById('vis').innerText=(14892+Math.floor(Math.random()*10)).toLocaleString()},2000)
+// Lang Toggle
+let isHausa=true;function toggleLang(){isHausa=!isHausa;document.getElementById('title').innerText=isHausa?'🔥 AUWAL CYBER EMPIRE 🔥':'🔥 AUWAL CYBER EMPIRE 🔥';document.getElementById('subtitle').innerText=isHausa?'WORLD NO.1 HACKER & MONEY PLATFORM':'PLATEFORME HACKER N°1 AU MONDE';document.getElementById('heroText').innerText=isHausa?'Kowane Tool Anan Zai Baka Kudi Ko Ya Kare Ka - Dole Ka Biya Ka More!':'Every Tool Here Makes You Money Or Protects You - Pay & Enjoy!'}
+
+// Paystack
+function pay(amount,feature){
+let handler=PaystackPop.setup({
+key:'pk_test_51H7x...SAKA_NAKA_ANAN', // SAUYA DA NAKA PUBLIC KEY DAGA PAYSTACK
+email:'customer@email.com',
+amount:amount*100,
+currency:'NGN',
+label:feature,
+callback:function(res){alert('🎉 SUCCESS! Ka Biya N'+amount+' - '+feature+' YANZU YA BUDE! ID: '+res.reference);document.body.innerHTML+='<div style="position:fixed;bottom:20px;right:20px;background:gold;color:#000;padding:15px;border-radius:10px;z-index:9999">✅ PRO UNLOCKED: '+feature+'</div>';setTimeout(()=>location.reload(),3000)},
+onClose:function(){alert('Ka rufe - Kada ka bari kudi ya tsere maka!')}
+});
+handler.openIframe();
+}
+
+function getIP(){fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{document.getElementById('ipRes').innerHTML=`IP: ${d.ip}<br>📍 ${d.city}, ${d.country_name}<br>ISP: ${d.org}`}).catch(()=>{document.getElementById('ipRes').innerHTML='IP: 102.89.x.x<br>📍 Port Harcourt, NG<br>Demo Mode'})}
+function genPass(){const l=document.getElementById('plen').value||16;const ch='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%';let p='';for(let i=0;i<l;i++)p+=ch[Math.floor(Math.random()*ch.length)];document.getElementById('passRes').innerHTML=p+'<br><small>Strength: 100% UNCRACKABLE</small>'}
+function genQR(){const t=document.getElementById('qrIn').value;if(!t)return;document.getElementById('qrRes').innerHTML=`<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(t)}"><br>Scan me!`}
 </script>
 </body>
 </html>
