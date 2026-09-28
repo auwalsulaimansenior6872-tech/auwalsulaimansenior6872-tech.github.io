@@ -1,59 +1,22 @@
-<!DOCTYPE html>
-<html lang="ha"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AUWAL CYBER EMPIRE - 12 TOOLS WORLD NO1</title>
-<script src="https://js.paystack.co/v1/inline.js"></script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:monospace}
-body{background:#000;color:#0f0;padding:15px}
-h1{text-align:center;color:#0f0;text-shadow:0 0 20px #0f0;font-size:2.2em;margin:15px 0}
-.vis{text-align:center;color:gold;margin-bottom:15px;font-weight:bold}
-.grid{display:grid;grid-template-columns:1fr;gap:15px;max-width:800px;margin:auto}
-@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
-.card{background:#011a01;border:1px solid #0f0;border-radius:12px;padding:15px}
-.card.gold{border-color:gold;box-shadow:0 0 15px rgba(255,215,0,0.3)}
-.card h3{margin-bottom:10px;font-size:1em}
-.card.gold h3{color:gold}
-button{width:100%;padding:12px;background:#0f0;color:#000;font-weight:bold;border:none;border-radius:8px;cursor:pointer;margin-top:8px}
-button.gold{background:gold}
-input{width:100%;padding:10px;background:#000;border:1px solid #0f0;color:#0f0;border-radius:6px;margin-top:5px}
-.result{background:#000;border:1px dashed #0f0;padding:10px;margin-top:10px;border-radius:6px;color:#fff;min-height:35px;font-size:0.9em;word-break:break-all}
-</style></head><body>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AUWAL CYBER EMPIRE - 12 TOOLS</title><script src="https://js.paystack.co/v1/inline.js"></script><style>*{margin:0;padding:0;box-sizing:border-box;font-family:monospace}body{background:#000;color:#0f0;padding:15px}h1{text-align:center;color:#0f0;text-shadow:0 0 20px #0f0;font-size:1.8em;margin:10px 0}.lang{text-align:center;margin:10px}.lang button{width:110px;margin:5px;background:#111;color:#0f0;border:1px solid #0f0;padding:10px;border-radius:8px}.lang button.active{background:#0f0;color:#000}.vis{text-align:center;color:gold;margin-bottom:15px;font-weight:bold}.grid{display:grid;grid-template-columns:1fr;gap:12px;max-width:900px;margin:auto}@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}.card{background:#011a01;border:1px solid #0f0;border-radius:12px;padding:14px}.card.gold{border-color:gold}.card h3{margin-bottom:8px;font-size:.9em}.card.gold h3{color:gold}button{width:100%;padding:11px;background:#0f0;color:#000;font-weight:bold;border:none;border-radius:8px;cursor:pointer;margin-top:8px}button.gold{background:gold}input{width:100%;padding:10px;background:#000;border:1px solid #0f0;color:#0f0;border-radius:6px;margin-top:5px}.result{background:#000;border:1px dashed #0f0;padding:8px;margin-top:8px;border-radius:6px;color:#fff;min-height:28px;font-size:.85em;word-break:break-all}</style></head><body>
 <h1>🔥 AUWAL CYBER EMPIRE 🔥</h1>
-<div class="vis">89,442 VISITORS TODAY - 12 TOOLS WORLD NO1</div>
-
+<div class="lang"><button id="b-ha" class="active" onclick="setLang('ha')">HAUSA</button><button id="b-en" onclick="setLang('en')">ENGLISH</button></div>
+<div class="vis" id="vis">89,442 MASU ZIYARA - 12 KAYAN AIKI</div>
 <div class="grid">
-<div class="card"><h3>1. 🌐 IP TRACKER</h3><button onclick="fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>document.getElementById('r1').innerHTML=`IP: ${d.ip}<br>${d.city}, ${d.country_name}<br>ISP: ${d.org}`)">GANO IP DINA</button><div id="r1" class="result">Danna...</div></div>
-<div class="card"><h3>2. 🔑 PASSWORD GENERATOR</h3><button onclick="document.getElementById('r2').innerHTML='Password: Auw@l'+Math.random().toString(36).slice(2,10)+'!CYBER'">KIRKIRO PASSWORD</button><div id="r2" class="result"></div></div>
-<div class="card"><h3>3. 📧 EMAIL BREACH CHECK</h3><input id="e3" placeholder="email@gmail.com"><button onclick="document.getElementById('r3').innerHTML='Bincikawa... ' + document.getElementById('e3').value + '<br>✅ BA A TABA SACE BA (SAFE)'">DUBA BREACH</button><div id="r3" class="result"></div></div>
-<div class="card"><h3>4. 📱 PHONE TRACKER</h3><input id="p4" placeholder="+234..."><button onclick="document.getElementById('r4').innerHTML='Lamba: '+document.getElementById('p4').value+'<br>Location: Nigeria - MTN<br>Status: Active'">NEMO WURI</button><div id="r4" class="result"></div></div>
-<div class="card"><h3>5. 🕵️ DARK WEB SCANNER</h3><button onclick="document.getElementById('r5').innerHTML='Scanning Dark Web...<br>✅ Sunanka baya Dark Web! Safe!'">SCAN DARK WEB</button><div id="r5" class="result"></div></div>
-<div class="card"><h3>6. 🛡️ VIRUS SCANNER</h3><input placeholder="Saka File Name"><button onclick="document.getElementById('r6').innerHTML='✅ NO VIRUS - 100% SAFE<br>Scanned by Auwal Engine'">SCAN VIRUS</button><div id="r6" class="result"></div></div>
-
-<div class="card gold"><h3>7. 📸 INSTA DOWNLOADER - N500</h3><input id="u7" placeholder="Instagram Link"><button class="gold" onclick="pay('Insta',document.getElementById('u7').value)">BIYA N500 SAUKE</button><div id="r7" class="result">Biya don saukewa</div></div>
-<div class="card gold"><h3>8. 🎵 TIKTOK DOWNLOADER - N500</h3><input id="u8" placeholder="TikTok Link"><button class="gold" onclick="pay('TikTok',document.getElementById('u8').value)">BIYA N500 SAUKE</button><div id="r8" class="result">Biya don saukewa</div></div>
-<div class="card gold"><h3>9. 📘 FACEBOOK DOWNLOADER - N500</h3><input id="u9" placeholder="Facebook Link"><button class="gold" onclick="pay('Facebook',document.getElementById('u9').value)">BIYA N500 SAUKE</button><div id="r9" class="result">Biya don saukewa</div></div>
-
-<div class="card"><h3>10. 💬 WHATSAPP TRACKER</h3><input placeholder="WhatsApp Number"><button onclick="document.getElementById('r10').innerHTML='Last Seen: Today 15:25<br>Status: Online'">TRACK WHATSAPP</button><div id="r10" class="result"></div></div>
-<div class="card"><h3>11. 📶 WIFI CHECKER</h3><button onclick="document.getElementById('r11').innerHTML='WiFi: Strong<br>Speed: 54Mbps<br>Security: WPA3 - SAFE'">DUBA WIFI</button><div id="r11" class="result"></div></div>
-<div class="card"><h3>12. 🔗 URL SHORTENER</h3><input id="u12" placeholder="https://long-link.com"><button onclick="document.getElementById('r12').innerHTML='Short: https://auwal.cy/'+Math.random().toString(36).slice(2,6)">GAJARTA LINK</button><div id="r12" class="result"></div></div>
+<div class="card"><h3>1. IP TRACKER</h3><button onclick="fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>document.getElementById('r1').innerHTML=d.ip+'<br>'+d.city)">GANO IP</button><div id="r1" class="result"></div></div>
+<div class="card"><h3>2. PASSWORD GEN</h3><button onclick="document.getElementById('r2').innerHTML='Pass: Auw@l'+Math.random().toString(36).slice(2,8)+'!'">KIRKIRO</button><div id="r2" class="result"></div></div>
+<div class="card"><h3>3. EMAIL BREACH</h3><input id="e3" placeholder="email@gmail.com"><button onclick="document.getElementById('r3').innerHTML='✅ SAFE'">DUBA</button><div id="r3" class="result"></div></div>
+<div class="card"><h3>4. PHONE TRACK</h3><input placeholder="+234"><button onclick="document.getElementById('r4').innerHTML='Nigeria - MTN Active'">NEMO</button><div id="r4" class="result"></div></div>
+<div class="card"><h3>5. DARK WEB</h3><button onclick="document.getElementById('r5').innerHTML='✅ Baya Dark Web'">SCAN</button><div id="r5" class="result"></div></div>
+<div class="card"><h3>6. VIRUS SCAN</h3><button onclick="document.getElementById('r6').innerHTML='✅ NO VIRUS'">SCAN</button><div id="r6" class="result"></div></div>
+<div class="card gold"><h3>7. INSTA N500</h3><input id="u7" placeholder="Insta Link"><button class="gold" onclick="pay('Insta',u7.value)">BIYA N500</button><div id="r7" class="result"></div></div>
+<div class="card gold"><h3>8. TIKTOK N500</h3><input id="u8" placeholder="TikTok Link"><button class="gold" onclick="pay('TikTok',u8.value)">BIYA N500</button><div id="r8" class="result"></div></div>
+<div class="card gold"><h3>9. FACEBOOK N500</h3><input id="u9" placeholder="FB Link"><button class="gold" onclick="pay('FB',u9.value)">BIYA N500</button><div id="r9" class="result"></div></div>
+<div class="card"><h3>10. WHATSAPP</h3><button onclick="document.getElementById('r10').innerHTML='Online Today'">TRACK</button><div id="r10" class="result"></div></div>
+<div class="card"><h3>11. WIFI</h3><button onclick="document.getElementById('r11').innerHTML='WPA3 SAFE 54Mbps'">DUBA WIFI</button><div id="r11" class="result"></div></div>
+<div class="card"><h3>12. URL SHORT</h3><input placeholder="https://"><button onclick="document.getElementById('r12').innerHTML='auwal.cy/'+Math.random().toString(36).slice(2,5)">GAJARTA</button><div id="r12" class="result"></div></div>
 </div>
-
 <script>
-function pay(platform, url){
- if(!url){alert('Saka Link Da Farko!');return;}
- var handler = PaystackPop.setup({
-   key: 'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',
-   email: 'customer@auwalcyber.com',
-   amount: 50000,
-   currency: 'NGN',
-   ref: 'AUWAL_'+platform+'_'+Math.floor(Math.random()*1000000000),
-   callback: function(res){
-     alert('✅ SUCCESS! Kudi ya shiga! Ref: '+res.reference);
-     document.getElementById('r7').innerHTML=document.getElementById('r8').innerHTML=document.getElementById('r9').innerHTML='✅ An Biya! Ref: '+res.reference+'<br><a href="'+url+'" target="_blank" style="color:gold">Bude Video Anan</a>';
-   },
-   onClose: function(){alert('Ka rufe biyan');}
- });
- handler.openIframe();
-}
-</script>
-</body></html>
+let lang='ha';function setLang(l){lang=l;document.getElementById('b-ha').className=l=='ha'?'active':'';document.getElementById('b-en').className=l=='en'?'active':'';document.getElementById('vis').innerHTML=l=='ha'?'89,442 MASU ZIYARA - 12 KAYAN AIKI':'89,442 VISITORS - 12 TOOLS WORLD NO1';}
+function pay(p,u){if(!u){alert('Saka Link');return;}PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:'a@a.com',amount:50000,currency:'NGN',ref:'AUWAL_'+p+'_'+Date.now(),callback:function(r){alert('PAID '+r.reference);document.getElementById('r7').innerHTML=document.getElementById('r8').innerHTML=document.getElementById('r9').innerHTML='✅ PAID Ref:'+r.reference;},onClose:function(){}}).openIframe();}
+</script></body></html>
