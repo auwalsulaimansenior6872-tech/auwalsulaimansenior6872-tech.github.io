@@ -1,67 +1,57 @@
 <!DOCTYPE html><html lang="ha"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AUWAL CYBER EMPIRE | World No.1</title>
+<title>AUWAL CYBER EMPIRE</title>
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}body{background:#050508;color:#e0e0e0;font-family:'JetBrains Mono',monospace}
-.bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 30%,rgba(0,255,136,.15),transparent 50%),radial-gradient(circle at 80% 70%,rgba(255,215,0,.1),transparent 50%),#050508;z-index:-2}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 30%,rgba(0,255,136,.15),transparent 50%),#050508;z-index:-2}
 header{text-align:center;padding:30px 20px 10px}
 .logo-wrap{display:flex;align-items:center;justify-content:center;gap:15px}
-.logo-icon{width:70px;height:70px;border-radius:50%;background:linear-gradient(145deg,#111,#000);border:2px solid gold;display:flex;align-items:center;justify-content:center;font-family:'Orbitron';font-size:32px;font-weight:900;color:gold;box-shadow:0 0 20px rgba(255,215,0,.4)}
+.logo-img{width:72px;height:72px;border-radius:50%;border:2.5px solid gold;box-shadow:0 0 22px rgba(255,215,0,.5);object-fit:cover;background:#111}
 .logo-text{font-family:'Orbitron';font-size:2.2em;font-weight:900;background:linear-gradient(90deg,#00ff88,#ffea00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
 .sub{color:#666;letter-spacing:4px;font-size:.7em;margin-top:8px}
 .stats{display:flex;justify-content:center;gap:12px;margin:18px auto;flex-wrap:wrap;max-width:900px}
-.stat{background:rgba(255,255,255,.05);border:1px solid rgba(0,255,136,.2);padding:10px 18px;border-radius:30px;backdrop-filter:blur(10px);font-size:.8em}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(0,255,136,.2);padding:10px 18px;border-radius:30px;font-size:.8em}
 .stat b{color:#00ff88}.live{width:8px;height:8px;background:#00ff88;border-radius:50%;display:inline-block;animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,255,136,.7)}70%{box-shadow:0 0 0 10px rgba(0,255,136,0)}100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}}
-.lang{display:flex;justify-content:center;gap:10px;margin:15px}
-.lang button{padding:8px 20px;border-radius:20px;border:1px solid #333;background:#111;color:#888;cursor:pointer}
-.lang button.active{background:#00ff88;color:#000;border-color:#00ff88;box-shadow:0 0 15px rgba(0,255,136,.5);font-weight:700}
 .grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;padding:15px}
-.card{position:relative;background:linear-gradient(145deg,rgba(20,20,30,.9),rgba(10,10,15,.9));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;transition:.3s}
-.card:hover{transform:translateY(-4px);border-color:rgba(0,255,136,.3);box-shadow:0 15px 30px rgba(0,0,0,.5)}
+.card{position:relative;background:linear-gradient(145deg,rgba(20,20,30,.9),rgba(10,10,15,.9));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px}
 .card.gold{border-color:rgba(255,215,0,.25)}
 .icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px;background:rgba(0,255,136,.1);color:#00ff88;border:1px solid rgba(0,255,136,.2)}
 .card.gold .icon{background:rgba(255,215,0,.1);color:#ffea00;border-color:rgba(255,215,0,.2)}
 .card h3{font-family:'Orbitron';font-size:.9em;margin-bottom:5px}
 .card p{font-size:.72em;color:#666;margin-bottom:12px}
-.card input{width:100%;padding:11px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;outline:none;font-family:inherit}
-.btn{width:100%;padding:11px;border:none;border-radius:8px;font-weight:700;cursor:pointer;margin-top:10px;font-family:'Orbitron';letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:6px}
+.card input{width:100%;padding:11px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;outline:none}
+.btn{width:100%;padding:11px;border:none;border-radius:8px;font-weight:700;cursor:pointer;margin-top:10px;font-family:'Orbitron';letter-spacing:1px}
 .btn-green{background:linear-gradient(90deg,#00ff88,#00cc6a);color:#000}.btn-gold{background:linear-gradient(90deg,#ffea00,#ffb700);color:#000}
 .result{margin-top:10px;padding:10px;background:rgba(0,0,0,.5);border-radius:8px;border:1px dashed rgba(255,255,255,.1);min-height:36px;font-size:.78em;color:#aaa;word-break:break-all}
 .badge{position:absolute;top:12px;right:12px;background:#ffea00;color:#000;font-size:.55em;padding:3px 8px;border-radius:20px;font-weight:900}
 </style></head><body><div class="bg"></div>
 <header>
-<div class="logo-wrap"><div class="logo-icon">A</div><div class="logo-text">AUWAL CYBER<br>EMPIRE</div></div>
+<div class="logo-wrap">
+<img class="logo-img" src="logo.png" onerror="this.style.display='none';document.getElementById('fallbackA').style.display='flex'">
+<div id="fallbackA" style="display:none;width:72px;height:72px;border-radius:50%;background:#111;border:2.5px solid gold;align-items:center;justify-content:center;font-family:'Orbitron';font-size:32px;font-weight:900;color:gold;box-shadow:0 0 22px rgba(255,215,0,.5)">A</div>
+<div class="logo-text">AUWAL CYBER<br>EMPIRE</div>
+</div>
 <div class="sub">WORLD NO.1 • 12 PREMIUM TOOLS • EST 2026</div>
 <div class="stats">
-<div class="stat"><span class="live"></span> <b id="vis">89442</b> <span data-ha="MASU ZIYARA NA GASKIYA" data-en="REAL VISITORS">MASU ZIYARA NA GASKIYA</span></div>
+<div class="stat"><span class="live"></span> <b id="vis">89442</b> MASU ZIYARA NA GASKIYA</div>
 <div class="stat"><b>12</b> TOOLS</div>
 <div class="stat"><b style="color:#ffea00">N500</b> PREMIUM</div>
 </div>
 </header>
-<div class="lang"><button id="b-ha" class="active" onclick="setLang('ha')">HAUSA</button><button id="b-en" onclick="setLang('en')">ENGLISH</button></div>
 <div class="grid">
-<div class="card"><div class="icon"><i class="fas fa-network-wired"></i></div><h3>IP TRACKER PRO</h3><p data-ha="Gano IP, wuri, ISP" data-en="Trace IP & ISP">Gano IP, wuri, ISP</p><button class="btn btn-green" onclick="ipTrack()">GANO IP DINA</button><div id="r1" class="result">Ready...</div></div>
-<div class="card"><div class="icon"><i class="fas fa-key"></i></div><h3>PASSWORD VAULT</h3><p>Soja Grade</p><button class="btn btn-green" onclick="genPass()">KIRKIRO</button><div id="r2" class="result"></div></div>
-<div class="card"><div class="icon"><i class="fas fa-envelope-open-text"></i></div><h3>BREACH SCANNER</h3><p>Dark Web Check</p><input id="e3" placeholder="email@gmail.com"><button class="btn btn-green" onclick="checkBreach()">DUBA</button><div id="r3" class="result"></div></div>
-<div class="card"><div class="icon"><i class="fas fa-mobile-alt"></i></div><h3>PHONE INTEL</h3><p>Gano Wuri Lamba</p><input placeholder="+234"><button class="btn btn-green" onclick="document.getElementById('r4').innerHTML='📍 Nigeria • MTN • Active'">NEMO WURI</button><div id="r4" class="result"></div></div>
-<div class="card"><div class="icon"><i class="fas fa-user-secret"></i></div><h3>DARK WEB SCAN</h3><p>Sunanka a Dark Web?</p><button class="btn btn-green" onclick="document.getElementById('r5').innerHTML='✅ CLEAN - Safe 98%'">SCAN</button><div id="r5" class="result"></div></div>
-<div class="card"><div class="icon"><i class="fas fa-virus-slash"></i></div><h3>VIRUS TOTAL</h3><p>Scan File & Link</p><input placeholder="Paste link"><button class="btn btn-green" onclick="document.getElementById('r6').innerHTML='✅ CLEAN'">SCAN</button><div id="r6" class="result"></div></div>
-<div class="card gold"><span class="badge">N500</span><div class="icon"><i class="fab fa-instagram"></i></div><h3>INSTA SAVER PRO</h3><p>HD No Watermark</p><input id="u7" placeholder="instagram.com/..."><button class="btn btn-gold" onclick="pay('Instagram',document.getElementById('u7').value)">BIYA N500</button><div id="r7" class="result">🔒 Premium</div></div>
+<div class="card"><div class="icon"><i class="fas fa-network-wired"></i></div><h3>IP TRACKER PRO</h3><p>Gano IP, wuri, ISP</p><button class="btn btn-green" onclick="ipTrack()">GANO IP DINA</button><div id="r1" class="result">Ready...</div></div>
+<div class="card"><div class="icon"><i class="fas fa-key"></i></div><h3>PASSWORD VAULT</h3><p>Soja Grade Password</p><button class="btn btn-green" onclick="genPass()">KIRKIRO</button><div id="r2" class="result"></div></div>
+<div class="card gold"><span class="badge">N500</span><div class="icon"><i class="fab fa-instagram"></i></div><h3>INSTA SAVER PRO</h3><p>Sauke HD No Watermark</p><input id="u7" placeholder="instagram.com/..."><button class="btn btn-gold" onclick="pay('Instagram',document.getElementById('u7').value)">BIYA N500</button><div id="r7" class="result">🔒 Premium - Biya don sauke</div></div>
 <div class="card gold"><span class="badge">N500</span><div class="icon"><i class="fab fa-tiktok"></i></div><h3>TIKTOK HD+</h3><p>No Watermark HD</p><input id="u8" placeholder="tiktok.com/..."><button class="btn btn-gold" onclick="pay('TikTok',document.getElementById('u8').value)">BIYA N500</button><div id="r8" class="result">🔒 Premium</div></div>
-<div class="card gold"><span class="badge">N500</span><div class="icon"><i class="fab fa-facebook"></i></div><h3>FB VIDEO PRO</h3><p>FB HD Video</p><input id="u9" placeholder="facebook.com/..."><button class="btn btn-gold" onclick="pay('Facebook',document.getElementById('u9').value)">BIYA N500</button><div id="r9" class="result">🔒 Premium</div></div>
-<div class="card"><div class="icon"><i class="fab fa-whatsapp"></i></div><h3>WHATSAPP TRACK</h3><p>Online Status</p><input placeholder="+234"><button class="btn btn-green" onclick="document.getElementById('r10').innerHTML='🟢 Online Now'">TRACK</button><div id="r10" class="result"></div></div>
-<div class="card"><div class="icon"><i class="fas fa-wifi"></i></div><h3>WIFI ANALYZER</h3><p>WiFi Strength</p><button class="btn btn-green" onclick="document.getElementById('r11').innerHTML='📶 -45 dBm Excellent'">ANALYZE</button><div id="r11" class="result"></div></div>
-<div class="card"><div class="icon"><i class="fas fa-link"></i></div><h3>LINK SHORTENER</h3><p>Gajarta Link</p><input placeholder="https://long..."><button class="btn btn-green" onclick="document.getElementById('r12').innerHTML='✅ https://auwal.cy/'+Math.random().toString(36).slice(2,6)">GAJARTA</button><div id="r12" class="result"></div></div>
+<div class="card gold"><span class="badge">N500</span><div class="icon"><i class="fab fa-facebook"></i></div><h3>FB VIDEO PRO</h3><p>Sauke FB HD</p><input id="u9" placeholder="facebook.com/..."><button class="btn btn-gold" onclick="pay('Facebook',document.getElementById('u9').value)">BIYA N500</button><div id="r9" class="result">🔒 Premium</div></div>
 </div>
-<div style="text-align:center;padding:30px;color:#333;font-size:.6em;letter-spacing:2px">© 2026 AUWAL CYBER EMPIRE • <a href="admin.html" style="color:#222;text-decoration:none">ADMIN</a> • PAYSTACK SECURED</div>
+<div style="text-align:center;padding:30px;color:#333;font-size:.6em">© 2026 AUWAL CYBER EMPIRE • <a href="admin.html" style="color:#222;text-decoration:none">ADMIN</a> • PAYSTACK SECURED</div>
 <script>
-let cur='ha';function setLang(l){cur=l;document.getElementById('b-ha').className=l=='ha'?'active':'';document.getElementById('b-en').className=l=='en'?'active':'';document.querySelectorAll('[data-ha]').forEach(e=>{e.textContent=l=='ha'?e.getAttribute('data-ha'):e.getAttribute('data-en')});}
-function ipTrack(){document.getElementById('r1').innerHTML='Scanning...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>document.getElementById('r1').innerHTML=`🌐 ${d.ip}<br>📍 ${d.city}, ${d.country_name}<br>🏢 ${d.org}`).catch(()=>document.getElementById('r1').innerHTML='IP: 102.89.x.x<br>Abuja, NG');}
+function ipTrack(){document.getElementById('r1').innerHTML='Scanning...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>document.getElementById('r1').innerHTML=`🌐 ${d.ip}<br>📍 ${d.city}, ${d.country_name}`).catch(()=>document.getElementById('r1').innerHTML='IP: 102.89.x.x<br>Abuja, NG');}
 function genPass(){let s='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789@#$!';let p='';for(let i=0;i<16;i++)p+=s[Math.floor(Math.random()*s.length)];document.getElementById('r2').innerHTML=`🔑 <b style="color:#00ff88">${p}</b>`;}
-function checkBreach(){let e=document.getElementById('e3').value;if(!e){alert('Saka Email');return;}document.getElementById('r3').innerHTML='Scanning...';setTimeout(()=>{document.getElementById('r3').innerHTML=`✅ ${e}<br>🛡️ SAFE`;},1000);}
-function pay(platform,url){if(!url){alert('Saka Link!');return;}PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:'customer@auwalcyber.com',amount:50000,currency:'NGN',ref:'AUWAL_'+platform+'_'+Date.now(),callback:function(res){let msg=`✅ <b style="color:#ffea00">AN BIYA! Ref: ${res.reference}</b><br><a href="${url}" target="_blank" style="color:#00ff88;border:1px solid #00ff88;padding:8px 12px;border-radius:8px;display:inline-block;margin-top:8px;text-decoration:none">▶ OPEN & DOWNLOAD</a><br><small>Long press > Save Video</small>`;document.getElementById('r7').innerHTML=msg;document.getElementById('r8').innerHTML=msg;document.getElementById('r9').innerHTML=msg;let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]');pays.push({platform,ref:res.reference,date:new Date().toLocaleString()});localStorage.setItem('auwal_pays',JSON.stringify(pays));},onClose:function(){}}).openIframe();}
-fetch('https://api.countapi.xyz/hit/auwal-cyber-empire-final/visits').then(r=>r.json()).then(d=>{document.getElementById('vis').textContent=d.value.toLocaleString();}).catch(()=>{let v=parseInt(localStorage.getItem('v')||'89442')+1;localStorage.setItem('v',v);document.getElementById('vis').textContent=v.toLocaleString();});
+function pay(platform,url){if(!url){alert('Saka Link!');return;}PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:'customer@auwalcyber.com',amount:50000,currency:'NGN',ref:'AUWAL_'+platform+'_'+Date.now(),callback:function(res){let msg=`✅ <b style="color:#ffea00">AN BIYA! Ref: ${res.reference}</b><br><a href="${url}" target="_blank" style="color:#00ff88;border:1px solid #00ff88;padding:8px 12px;border-radius:8px;display:inline-block;margin-top:8px;text-decoration:none">▶ OPEN & DOWNLOAD</a>`;document.getElementById('r7').innerHTML=msg;document.getElementById('r8').innerHTML=msg;document.getElementById('r9').innerHTML=msg;},onClose:function(){}}).openIframe();}
+fetch('https://api.countapi.xyz/hit/auwal-cyber-empire-final-v2/visits').then(r=>r.json()).then(d=>{document.getElementById('vis').textContent=d.value.toLocaleString();}).catch(()=>{let v=parseInt(localStorage.getItem('v')||'89442')+1;localStorage.setItem('v',v);document.getElementById('vis').textContent=v.toLocaleString();});
 </script></body></html>
