@@ -1,51 +1,52 @@
-// AUWAL DUAL LANGUAGE V2 - FULL TRANSLATION
-const dict = {
+// FINAL LANGUAGE FIX V3 - WORKS 100%
+const T = {
   "MASU ZIYARA": "VISITORS",
   "GANO IP": "FIND IP",
   "KIRKIRO": "GENERATE",
   "Gano IP, wuri, ISP": "Find IP, location, ISP",
   "Soja Grade 18 chars": "Military Grade 18 chars",
-  "WORLD NO.1 • 12 PREMIUM TOOLS": "WORLD NO.1 • 12 PREMIUM TOOLS",
-  "IP TRACKER PRO": "IP TRACKER PRO",
-  "PASSWORD VAULT": "PASSWORD VAULT",
-  "N500 NO WATERMARK": "N500 NO WATERMARK"
+  "Shigar da Link": "Paste Link",
+  "SAUKE": "DOWNLOAD",
+  "SAUKE VIDEO": "DOWNLOAD VIDEO"
 };
 
-let currentLang = localStorage.getItem('site_lang') || 'ha';
+let lang = localStorage.getItem('site_lang') || 'ha';
 
-function translatePage(to) {
-  currentLang = to;
-  localStorage.setItem('site_lang', to);
-  document.querySelectorAll('button, span, p, div').forEach(el => {
-    if(el.children.length === 0) {
-      let txt = el.textContent.trim();
-      if(to === 'en' && dict[txt]) el.textContent = dict[txt];
-      if(to === 'ha') {
-        // Mayar da Hausa
-        for(let ha in dict){ if(dict[ha] === txt) el.textContent = ha; }
+function doTranslate(target){
+  lang = target;
+  localStorage.setItem('site_lang', target);
+  // Bincika kowane element
+  const all = document.querySelectorAll('button, span, p, div, small, h3');
+  all.forEach(el=>{
+    if(el.children.length === 0 || el.tagName === 'BUTTON'){
+      let original = el.innerText? el.innerText.trim() : '';
+      if(!original) return;
+      if(target === 'en'){
+        if(T[original]) el.innerText = T[original];
+        // Karamin rubutu
+        if(original.includes('Gano IP')) el.innerText = T["Gano IP, wuri, ISP"];
+        if(original.includes('Soja Grade')) el.innerText = T["Soja Grade 18 chars"];
+      } else {
+        for(let ha in T){
+          if(T[ha] === original) el.innerText = ha;
+          if(original === T["Gano IP, wuri, ISP"]) el.innerText = "Gano IP, wuri, ISP";
+          if(original === T["Soja Grade 18 chars"]) el.innerText = "Soja Grade 18 chars";
+        }
       }
     }
   });
-  // Maida kananan rubutu
-  document.body.querySelectorAll('*').forEach(el=>{
-    if(el.textContent === 'Gano IP, wuri, ISP' && to==='en') el.textContent = 'Find IP, location, ISP';
-  });
-  updateBtn();
-}
-
-function updateBtn(){
-  let b = document.getElementById('langBtn');
-  if(b) b.textContent = currentLang === 'ha'? '🌍 ENGLISH' : '🌍 HAUSA';
+  document.getElementById('langBtn').innerText = target === 'ha'? '🌍 ENGLISH' : '🌍 HAUSA';
 }
 
 setTimeout(()=>{
-  if(!document.getElementById('langBtn')){
-    let btn = document.createElement('button');
+  let btn = document.getElementById('langBtn');
+  if(!btn){
+    btn = document.createElement('button');
     btn.id = 'langBtn';
-    btn.style = 'position:fixed;top:15px;right:15px;z-index:99999;background:black;color:#00ff88;border:2px solid #00ff88;padding:10px 15px;border-radius:25px;font-weight:bold;';
-    btn.onclick = ()=> translatePage(currentLang==='ha'?'en':'ha');
+    btn.style = 'position:fixed;top:12px;right:12px;z-index:999999;background:#000;color:#0f8;border:2px solid #0f8;padding:8px 14px;border-radius:20px;font-weight:bold;';
     document.body.appendChild(btn);
-    updateBtn();
-    if(currentLang==='en') translatePage('en');
   }
-},1500);
+  btn.onclick = ()=> doTranslate(lang==='ha'?'en':'ha');
+  btn.innerText = lang==='ha'?'🌍 ENGLISH':'🌍 HAUSA';
+  if(lang==='en') doTranslate('en');
+},1000);
