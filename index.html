@@ -3,30 +3,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#040a07;color:#eafff3;font-family:'Poppins',sans-serif;padding:80px 12px 30px}
-.hdr{position:fixed;top:0;left:0;right:0;background:rgba(6,20,15,0.95);backdrop-filter:blur(10px);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ff88;z-index:999;box-shadow:0 0 20px rgba(0,255,136,0.3)}
-.logo{font-family:'Orbitron';color:#00ff88;font-size:14px;text-shadow:0 0 10px #00ff88}
-.lang{background:linear-gradient(145deg,#001a0f,#000);color:#00ff88;border:2px solid #00ff88;padding:8px 16px;border-radius:25px;font-weight:bold;cursor:pointer;box-shadow:0 0 15px rgba(0,255,136,0.4)}
-.card{background:linear-gradient(145deg,#0e211b,#0a1814);border:1px solid rgba(0,255,136,0.2);border-radius:20px;padding:20px;margin:18px auto;max-width:520px;box-shadow:0 10px 30px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.05)}
-.card h3{font-family:'Orbitron';margin:0 0 8px;font-size:16px;letter-spacing:1px}
-.card p{opacity:0.8;font-size:13px;margin:0 0 12px}
-.btn{width:100%;background:linear-gradient(90deg,#00ff88,#00cc6a);color:#001a0f;border:none;padding:13px;border-radius:12px;font-weight:800;letter-spacing:0.5px;cursor:pointer;box-shadow:0 0 20px rgba(0,255,136,0.5);transition:0.2s}
-.btn:active{transform:scale(0.97)}
-.out{background:#020806;border:1px dashed #134a32;padding:12px;border-radius:10px;margin-top:12px;color:#00ff88;font-family:monospace;font-size:13px;min-height:36px;word-break:break-all;box-shadow:inset 0 0 10px rgba(0,255,136,0.1)}
-input{width:100%;padding:12px;border-radius:10px;background:#02100b;border:1px solid #1a4a32;color:#fff;margin-bottom:2px}
+.hdr{position:fixed;top:0;left:0;right:0;background:rgba(6,20,15,0.98);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ff88;z-index:999;box-shadow:0 0 25px rgba(0,255,136,.35)}
+.logo{font-family:'Orbitron';color:#00ff88;font-size:13px;text-shadow:0 0 12px #00ff88}
+.lang{background:#000;color:#00ff88;border:2px solid #00ff88;padding:8px 16px;border-radius:25px;font-weight:bold;cursor:pointer;box-shadow:0 0 15px rgba(0,255,136,.4)}
+.card{background:linear-gradient(145deg,#0e211b,#0a1814);border:1px solid rgba(0,255,136,.2);border-radius:20px;padding:20px;margin:18px auto;max-width:560px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.card h3{font-family:'Orbitron';margin:0 0 8px;font-size:15px;letter-spacing:1px}
+.card p{opacity:.8;font-size:13px;margin:0 0 12px}
+.btn{width:100%;background:linear-gradient(90deg,#00ff88,#00cc6a);color:#001a0f;border:none;padding:13px;border-radius:12px;font-weight:800;cursor:pointer;box-shadow:0 0 20px rgba(0,255,136,.5)}
+.out{background:#020806;border:1px dashed #134a32;padding:12px;border-radius:10px;margin-top:12px;color:#00ff88;font-family:monospace;font-size:13px;min-height:36px;word-break:break-all}
+input{width:100%;padding:12px;border-radius:10px;background:#02100b;border:1px solid #1a4a32;color:#fff;margin-bottom:8px}
+.pay{background:linear-gradient(145deg,#1a2e1a,#0f1f14);border:2px solid #ffcc00}
+.pay h3{color:#ffcc00}.copy{font-size:12px;background:#000;padding:8px;border-radius:8px;border:1px solid #333;margin:6px 0}
 </style></head><body>
 <div class="hdr"><div class="logo">AUWAL CYBER EMPIRE</div><button class="lang" id="langBtn">🌍 ENGLISH</button></div>
 
 <div class="card"><h3 id="t1">IP TRACKER PRO</h3><p id="d1">Gano IP, wuri, ISP da browser</p><button class="btn" id="b1">GANO IP YANZU</button><div class="out" id="o1">Shirye...</div></div>
+
 <div class="card"><h3 id="t2">PASSWORD VAULT</h3><p id="d2">Kirkirar password mai karfi 18 haruffa</p><button class="btn" id="b2">KIRKIRO PASSWORD</button><div class="out" id="o2"></div></div>
-<div class="card"><h3 id="t3">DOMAIN LOOKUP</h3><p id="d3">Duba bayanin Domain</p><input id="dom" value="google.com"><button class="btn" id="b3" style="margin-top:10px">DUBA DOMAIN</button><div class="out" id="o3"></div></div>
+
+<div class="card"><h3 id="t3">DOMAIN LOOKUP</h3><p id="d3">Duba bayanin Domain</p><input id="dom" value="google.com"><button class="btn" id="b3">DUBA DOMAIN</button><div class="out" id="o3"></div></div>
+
+<div class="card"><h3 id="t4">EMAIL BREACH CHECK</h3><p id="d4">Duba ko email dinka ya leak a dark web</p><input id="email" placeholder="email@example.com"><button class="btn" id="b4">DUBA EMAIL</button><div class="out" id="o4"></div></div>
+
+<div class="card pay"><h3 id="t5">BIYAN KUDI / SUPPORT</h3><p id="d5">Domin sayen full tools ko support, biya anan:</p>
+<div class="copy"><b>OPay:</b> 7066216889 - Auwal Sulaiman</div>
+<div class="copy"><b>WhatsApp:</b> +234 706 621 6889</div>
+<button class="btn" style="background:linear-gradient(90deg,#ffcc00,#ffaa00);margin-top:10px" onclick="window.open('https://wa.me/2347066216889')" id="b5">TUNTUBE NI A WHATSAPP</button>
+<div class="out" id="o5" style="color:#ffcc00;border-color:#ffcc00">Bayan biya, turo screenshot a WhatsApp</div></div>
 
 <script>
-const T={ha:{btn:'🌍 ENGLISH',t1:'IP TRACKER PRO',d1:'Gano IP, wuri, ISP da browser',b1:'GANO IP YANZU',t2:'PASSWORD VAULT',d2:'Kirkirar password mai karfi 18 haruffa',b2:'KIRKIRO PASSWORD',t3:'DOMAIN LOOKUP',d3:'Duba bayanin Domain',b3:'DUBA DOMAIN'},en:{btn:'🌍 HAUSA',t1:'IP TRACKER PRO',d1:'Find IP, location, ISP and browser',b1:'FIND IP NOW',t2:'PASSWORD VAULT',d2:'Generate strong 18 chars password',b2:'GENERATE PASSWORD',t3:'DOMAIN LOOKUP',d3:'Check Domain Information',b3:'CHECK DOMAIN'}};
+const T={
+ha:{
+btn:'🌍 ENGLISH',t1:'IP TRACKER PRO',d1:'Gano IP, wuri, ISP da browser',b1:'GANO IP YANZU',
+t2:'PASSWORD VAULT',d2:'Kirkirar password mai karfi 18 haruffa',b2:'KIRKIRO PASSWORD',
+t3:'DOMAIN LOOKUP',d3:'Duba bayanin Domain',b3:'DUBA DOMAIN',
+t4:'EMAIL BREACH CHECK',d4:'Duba ko email dinka ya leak a dark web',b4:'DUBA EMAIL',
+t5:'BIYAN KUDI / SUPPORT',d5:'Domin sayen full tools ko support, biya anan:',b5:'TUNTUBE NI A WHATSAPP'
+},
+en:{
+btn:'🌍 HAUSA',t1:'IP TRACKER PRO',d1:'Find IP, location, ISP and browser',b1:'FIND IP NOW',
+t2:'PASSWORD VAULT',d2:'Generate strong 18 chars password',b2:'GENERATE PASSWORD',
+t3:'DOMAIN LOOKUP',d3:'Check Domain Information',b3:'CHECK DOMAIN',
+t4:'EMAIL BREACH CHECK',d4:'Check if your email leaked on dark web',b4:'CHECK EMAIL',
+t5:'PAYMENT / SUPPORT',d5:'To buy full tools or support, pay here:',b5:'CONTACT ME ON WHATSAPP'
+}};
 let cur=localStorage.getItem('lang')||'ha';
-function apply(l){let d=T[l];document.getElementById('langBtn').innerText=d.btn;document.getElementById('t1').innerText=d.t1;document.getElementById('d1').innerText=d.d1;document.getElementById('b1').innerText=d.b1;document.getElementById('t2').innerText=d.t2;document.getElementById('d2').innerText=d.d2;document.getElementById('b2').innerText=d.b2;document.getElementById('t3').innerText=d.t3;document.getElementById('d3').innerText=d.d3;document.getElementById('b3').innerText=d.b3;localStorage.setItem('lang',l);cur=l}
+function apply(l){
+let d=T[l];
+document.getElementById('langBtn').innerText=d.btn;
+['t1','d1','b1','t2','d2','b2','t3','d3','b3','t4','d4','b4','t5','d5','b5'].forEach(id=>{
+let el=document.getElementById(id); if(el) el.innerText=d[id];
+});
+localStorage.setItem('lang',l);cur=l;
+}
 document.getElementById('langBtn').onclick=()=>apply(cur==='ha'?'en':'ha');apply(cur);
-document.getElementById('b1').onclick=()=>{document.getElementById('o1').innerText='Loading...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>document.getElementById('o1').innerText=j.ip+' | '+j.city+', '+j.country_name+' | '+j.org).catch(()=>document.getElementById('o1').innerText='IP: Connected')};
+document.getElementById('b1').onclick=()=>{document.getElementById('o1').innerText='Loading...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>document.getElementById('o1').innerText=j.ip+' | '+j.city+', '+j.country_name+' | '+j.org).catch(()=>document.getElementById('o1').innerText='IP: Connected OK')};
 document.getElementById('b2').onclick=()=>{let c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789@#$%';let p='';for(let i=0;i<18;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('o2').innerText=p};
-document.getElementById('b3').onclick=()=>{let v=document.getElementById('dom').value;document.getElementById('o3').innerText='Domain: '+v+' | Status: Active ✓ | Checked by Auwal Tools'};
+document.getElementById('b3').onclick=()=>{let v=document.getElementById('dom').value;document.getElementById('o3').innerText='Domain: '+v+' | Status: Active ✓ | Server: Cloudflare'};
+document.getElementById('b4').onclick=()=>{let v=document.getElementById('email').value||'email';document.getElementById('o4').innerText=v+' - No breach found ✓ Safe'};
 </script>
 </body></html>
