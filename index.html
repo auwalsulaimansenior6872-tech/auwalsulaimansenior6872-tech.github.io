@@ -11,92 +11,101 @@
 .hdr{position:fixed;top:0;left:0;right:0;height:70px;background:rgba(5,18,13,0.96);display:flex;justify-content:flex-end;align-items:center;padding:10px 14px;z-index:999;border-bottom:1px solid rgba(0,255,136,.2)}
 .lang{border:1px solid #00ff88;color:#00ff88;background:rgba(0,255,136,.1);padding:8px 18px;border-radius:20px;font-weight:bold;cursor:pointer}
 .hero{text-align:center;margin:10px auto 20px;max-width:600px}
-.logo-circle{width:72px;height:72px;margin:0 auto 12px;border-radius:50%;background:#000;border:2px solid #ffcc00;display:flex;align-items:center;justify-content:center;box-shadow:0 0 25px rgba(255,204,0,.5);font-family:'Orbitron';font-size:34px;color:#ffcc00;font-weight:800}
-.title{font-family:'Orbitron';font-size:32px;font-weight:800;line-height:1.1;background:linear-gradient(90deg,#00ff88,#c8ff00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1px}
+.logo-circle{width:72px;height:72px;margin:0 auto 12px;border-radius:50%;background:#000;border:2px solid #ffcc00;display:flex;align-items:center;justify-content:center;box-shadow:0 0 25px rgba(255,204,0,.5);font-family:'Orbitron';font-size:34px;color:#ffcc00;font-weight:800;cursor:pointer;user-select:none}
+.title{font-family:'Orbitron';font-size:32px;font-weight:800;line-height:1.1;background:linear-gradient(90deg,#00ff88,#c8ff00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sub{font-size:11px;letter-spacing:4px;opacity:.5;margin-top:6px}
 .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}
 .badge{background:#0d1a13;border:1px solid rgba(0,255,136,.2);padding:8px 16px;border-radius:20px;font-size:12px}
-.badge span{color:#00ff88}.badge.y span{color:#ffcc00}
-.card{background:linear-gradient(180deg,#111c16,#0a1210);border:1px solid rgba(0,255,136,.12);border-radius:20px;padding:18px;margin:16px auto;max-width:560px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.badge span{color:#00ff88}
+.card{background:linear-gradient(180deg,#111c16,#0a1210);border:1px solid rgba(0,255,136,.12);border-radius:20px;padding:18px;margin:16px auto;max-width:560px;position:relative;overflow:hidden}
+.card.locked{border-color:rgba(255,204,0,.4);opacity:.85}
+.card.locked::after{content:'🔒 N500';position:absolute;top:10px;right:10px;background:#ffcc00;color:#000;font-size:10px;font-weight:800;padding:3px 8px;border-radius:10px;font-family:'Orbitron'}
 .ico{width:46px;height:46px;background:rgba(0,255,136,.12);border:1px solid rgba(0,255,136,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
-.card h3{font-family:'Orbitron';font-size:14px;margin:0 0 4px;letter-spacing:1px}
+.card h3{font-family:'Orbitron';font-size:14px;margin:0 0 4px}
 .card p{font-size:11px;opacity:.5;margin:0 0 14px}
-.btn{width:100%;background:linear-gradient(90deg,#00ff88,#00e676);color:#00150d;border:none;padding:14px;border-radius:12px;font-family:'Orbitron';font-weight:800;font-size:13px;cursor:pointer;letter-spacing:1px;box-shadow:0 0 20px rgba(0,255,136,.35)}
-.btn2{background:linear-gradient(90deg,#ffcc00,#ffaa00)}
+.btn{width:100%;background:linear-gradient(90deg,#00ff88,#00e676);color:#00150d;border:none;padding:14px;border-radius:12px;font-family:'Orbitron';font-weight:800;font-size:13px;cursor:pointer}
+.btn2{background:linear-gradient(90deg,#ffcc00,#ffaa00);color:#000}
+.btn-lock{background:linear-gradient(90deg,#ffaa00,#ffcc00);color:#000}
 input{width:100%;background:#070f0c;border:1px solid rgba(0,255,136,.15);padding:13px;border-radius:10px;color:#fff;margin-bottom:10px;font-family:monospace}
 .out{background:#060e0a;border:1px solid rgba(0,255,136,.12);padding:12px;border-radius:10px;margin-top:12px;color:#00ff88;font-size:11px;min-height:38px;word-break:break-all}
 .pay{border:1.5px solid #ffcc00;background:linear-gradient(180deg,#1e1a0a,#12100a)}
+#adminPanel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.96);z-index:9999;padding:20px;overflow:auto}
+.admin-box{background:#0a1210;border:2px solid #00ff88;border-radius:16px;padding:20px;max-width:600px;margin:40px auto}
 </style>
 </head>
 <body>
 <div class="hdr"><button class="lang" id="langBtn">🌍 ENGLISH</button></div>
-
 <div class="hero">
-<div class="logo-circle">A</div>
+<div class="logo-circle" id="logoA" ondblclick="openAdmin()">A</div>
 <div class="title">AUWAL CYBER<br>EMPIRE</div>
 <div class="sub">WORLD NO.1 • 12 PREMIUM TOOLS</div>
 <div class="badges">
 <div class="badge"><span>●</span> <b id="vis">89,459</b> <span id="l1">MASU ZIYARA</span></div>
-<div class="badge"><span>12</span> TOOLS</div>
-<div class="badge y"><span style="color:#ffcc00">N500</span> NO WATERMARK</div>
+<div class="badge"><span id="freeC">5 FREE</span> | <span style="color:#ffcc00">7 PREMIUM</span></div>
 </div>
 </div>
 
-<div class="card"><div class="ico">👥</div><h3>IP TRACKER PRO</h3><p id="d1">Gano IP, wuri, ISP</p><button class="btn" id="b1" onclick="ipTrack()">GANO IP</button><div class="out" id="o1">Ready...</div></div>
+<div class="card"><div class="ico">👥</div><h3>IP TRACKER PRO</h3><p>FREE - Gano IP, wuri, ISP</p><button class="btn" onclick="ipTrack()">GANO IP</button><div class="out" id="o1">Ready...</div></div>
+<div class="card"><div class="ico">🔑</div><h3>PASSWORD VAULT</h3><p>FREE - Soja Grade 18</p><button class="btn" onclick="genPass()">KIRKIRO</button><div class="out" id="o2"></div></div>
+<div class="card"><div class="ico">🔍</div><h3>DOMAIN LOOKUP</h3><p>FREE</p><input id="dom" value="google.com"><button class="btn" onclick="domL()">DUBA</button><div class="out" id="o3"></div></div>
+<div class="card"><div class="ico">🔳</div><h3>QR CODE PRO</h3><p>FREE</p><input id="qrtext" placeholder="https://..."><button class="btn" onclick="makeQR()">KIRKIRO QR</button><div class="out" id="o4"><div id="qrcode"></div></div></div>
+<div class="card"><div class="ico">#️⃣</div><h3>HASH GEN</h3><p>FREE - MD5/SHA256</p><input id="hasht" placeholder="Rubuta kalma"><button class="btn" onclick="hashG()">GENERATE</button><div class="out" id="o5"></div></div>
 
-<div class="card"><div class="ico">🔑</div><h3>PASSWORD VAULT</h3><p>Soja Grade 18 chars</p><button class="btn" onclick="genPass()">KIRKIRO</button><div class="out" id="o2"></div></div>
+<div class="card locked" data-premium><div class="ico">📧</div><h3>EMAIL BREACH</h3><p>PREMIUM - N500</p><input id="email" placeholder="email@gmail.com"><button class="btn btn-lock" onclick="checkPremium(()=>emailC())">🔒 BIYA N500</button><div class="out" id="o6"></div></div>
+<div class="card locked" data-premium><div class="ico">📱</div><h3>PHONE LOOKUP</h3><p>PREMIUM</p><input id="phone" placeholder="080..."><button class="btn btn-lock" onclick="checkPremium(()=>phoneC())">🔒 BIYA N500</button><div class="out" id="o7"></div></div>
+<div class="card locked" data-premium><div class="ico">🌐</div><h3>PORT SCANNER</h3><p>PREMIUM</p><input id="port" value="google.com:443"><button class="btn btn-lock" onclick="checkPremium(()=>portC())">🔒 BIYA N500</button><div class="out" id="o8"></div></div>
+<div class="card locked" data-premium><div class="ico">🛰️</div><h3>IMEI CHECKER</h3><p>PREMIUM</p><input id="imei" placeholder="IMEI"><button class="btn btn-lock" onclick="checkPremium(()=>imeiC())">🔒 BIYA N500</button><div class="out" id="o9"></div></div>
+<div class="card locked" data-premium><div class="ico">🔒</div><h3>WIFI PASS GEN</h3><p>PREMIUM</p><button class="btn btn-lock" onclick="checkPremium(()=>wifiG())">🔒 BIYA N500</button><div class="out" id="o10"></div></div>
+<div class="card locked" data-premium><div class="ico">🛡️</div><h3>BLACKLIST CHECK</h3><p>PREMIUM</p><button class="btn btn-lock" onclick="checkPremium(()=>blk())">🔒 BIYA N500</button><div class="out" id="o11"></div></div>
+<div class="card locked" data-premium><div class="ico">📰</div><h3>CYBER NEWS</h3><p>PREMIUM</p><button class="btn btn-lock" onclick="checkPremium(()=>newsC())">🔒 BIYA N500</button><div class="out" id="o12"></div></div>
 
-<div class="card"><div class="ico">🔍</div><h3>DOMAIN LOOKUP</h3><p>Duba Domain Info</p><input id="dom" value="google.com"><button class="btn" onclick="domL()">DUBA</button><div class="out" id="o3"></div></div>
-
-<div class="card"><div class="ico">🔳</div><h3>QR CODE PRO</h3><p>Create QR Instant</p><input id="qrtext" placeholder="https://..."><button class="btn" onclick="makeQR()">KIRKIRO QR</button><div class="out" id="o4"><div id="qrcode"></div></div></div>
-
-<div class="card"><div class="ico">#️⃣</div><h3>HASH GEN</h3><p>MD5 / SHA256 Generator</p><input id="hasht" placeholder="Rubuta kalma"><button class="btn" onclick="hashG()">GENERATE</button><div class="out" id="o5"></div></div>
-
-<div class="card"><div class="ico">📧</div><h3>EMAIL BREACH</h3><p>Duba email leak</p><input id="email" placeholder="email@gmail.com"><button class="btn" onclick="emailC()">DUBA EMAIL</button><div class="out" id="o6"></div></div>
-
-<div class="card"><div class="ico">📱</div><h3>PHONE LOOKUP</h3><p>Gano network & wuri</p><input id="phone" placeholder="080..."><button class="btn" onclick="phoneC()">DUBA NUMBER</button><div class="out" id="o7"></div></div>
-
-<div class="card"><div class="ico">🌐</div><h3>PORT SCANNER</h3><p>Scan open ports</p><input id="port" value="google.com:443"><button class="btn" onclick="portC()">SCAN</button><div class="out" id="o8"></div></div>
-
-<div class="card"><div class="ico">🛰️</div><h3>IMEI CHECKER</h3><p>Duba IMEI valid</p><input id="imei" placeholder="IMEI number"><button class="btn" onclick="imeiC()">DUBA IMEI</button><div class="out" id="o9"></div></div>
-
-<div class="card"><div class="ico">🔒</div><h3>WIFI PASS GEN</h3><p>Strong WiFi password</p><button class="btn" onclick="wifiG()">KIRKIRO WIFI</button><div class="out" id="o10"></div></div>
-
-<div class="card"><div class="ico">🛡️</div><h3>BLACKLIST CHECK</h3><p>Duba IP blacklist</p><button class="btn" onclick="blk()">DUBA</button><div class="out" id="o11"></div></div>
-
-<div class="card"><div class="ico">📰</div><h3>CYBER NEWS</h3><p id="d12">Labaran Cyber</p><button class="btn" onclick="newsC()">BUDE</button><div class="out" id="o12"></div></div>
-
-<div class="card pay"><h3 id="tpay">💳 BIYAN KUDI - PAYSTACK LIVE</h3><p id="dpay" style="opacity:.8;font-size:12px">Kudi zai shiga OPay 6561199329 kai tsaye - Auwal Sulaiman</p>
-<button class="btn btn2" onclick="biya(500)">BIYA N500 NO WATERMARK</button><br><br>
+<div class="card pay"><h3>💳 BUDE DUKAN TOOLS - N500 KAWAI</h3><p style="opacity:.7;font-size:12px">Biya sau daya, amfani har abada! Secure Paystack</p>
+<button class="btn btn2" onclick="biya(500)">BIYA N500 - BUDE 7 PREMIUM</button><br><br>
 <button class="btn btn2" onclick="biya(2000)">BIYA N2,000</button><br><br>
 <button class="btn btn2" onclick="biya(10000)">BIYA N10,000 FULL EMPIRE</button>
-<div class="out" style="color:#ffcc00;border-color:rgba(255,204,0,.4)">✅ LIVE Paystack Active | OPay: 6561199329</div>
+<div class="out" style="color:#ffcc00;text-align:center">🔒 Secure - Paystack Direct</div>
+</div>
+
+<div id="adminPanel">
+<div class="admin-box">
+<h2 style="color:#00ff88;font-family:Orbitron">🔐 ADMIN PANEL - AUWAL</h2>
+<p>Masu ziyara: <b id="adminVis">0</b></p>
+<p>Daukacin kudade: <b id="adminTotal" style="color:#ffcc00">₦0</b></p>
+<h3>Wayanda suka biya:</h3>
+<div id="adminList" style="background:#000;padding:10px;border-radius:8px;max-height:300px;overflow:auto;font-size:11px"></div>
+<br>
+<button class="btn" onclick="clearData()">Share Data</button><br><br>
+<button class="btn btn2" onclick="document.getElementById('adminPanel').style.display='none'">RUFE ADMIN</button>
+</div>
 </div>
 
 <script>
-// LANG
+let isPaid = localStorage.getItem('auwal_paid')==='true';
+let visits = parseInt(localStorage.getItem('visits')||'89459');
+visits++; localStorage.setItem('visits',visits); document.getElementById('vis').innerText=visits.toLocaleString();
+if(isPaid){ document.querySelectorAll('.locked').forEach(c=>{c.classList.remove('locked'); c.querySelector('button').className='btn'; c.querySelector('button').innerText=c.querySelector('h3').innerText.includes('EMAIL')?'DUBA EMAIL':c.querySelector('h3').innerText.includes('PHONE')?'DUBA NUMBER':c.querySelector('h3').innerText.includes('PORT')?'SCAN':c.querySelector('h3').innerText.includes('IMEI')?'DUBA IMEI':c.querySelector('h3').innerText.includes('WIFI')?'KIRKIRO WIFI':c.querySelector('h3').innerText.includes('BLACK')?'DUBA':'BUDE'}) }
+
+function checkPremium(fn){ if(isPaid) fn(); else { if(confirm('Wannan PREMIUM ne! Biya N500 don budewa?')) biya(500) } }
+
 let cur=localStorage.getItem('lang')||'ha';
-const dict={ha:{btn:'🌍 ENGLISH',d1:'Gano IP, wuri, ISP',l1:'MASU ZIYARA',tpay:'💳 BIYAN KUDI - PAYSTACK LIVE',dpay:'Kudi zai shiga OPay 6561199329 kai tsaye - Auwal Sulaiman',b1:'GANO IP'},
-en:{btn:'🌍 HAUSA',d1:'Find IP, location, ISP',l1:'VISITORS',tpay:'💳 PAYMENT - PAYSTACK LIVE',dpay:'Money goes to OPay 6561199329 directly - Auwal Sulaiman',b1:'FIND IP'}};
-function apply(l){document.getElementById('langBtn').innerText=dict[l].btn;document.getElementById('d1').innerText=dict[l].d1;document.getElementById('l1').innerText=dict[l].l1;document.getElementById('tpay').innerText=dict[l].tpay;document.getElementById('dpay').innerText=dict[l].dpay;document.getElementById('b1').innerText=dict[l].b1;localStorage.setItem('lang',l);cur=l}
+const dict={ha:{btn:'🌍 ENGLISH',l1:'MASU ZIYARA'},en:{btn:'🌍 HAUSA',l1:'VISITORS'}};
+function apply(l){document.getElementById('langBtn').innerText=dict[l].btn;document.getElementById('l1').innerText=dict[l].l1;localStorage.setItem('lang',l);cur=l}
 document.getElementById('langBtn').onclick=()=>apply(cur==='ha'?'en':'ha');apply(cur);
 
-// Counter animation
-let v=89442; setInterval(()=>{v++;document.getElementById('vis').innerText=v.toLocaleString()},3000);
-
-// TOOLS
-function ipTrack(){let o=document.getElementById('o1');o.innerText='Loading...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>o.innerHTML='🌐 IP: <b style="color:#00ff88">'+j.ip+'</b><br>📍 '+j.city+', '+j.country_name+'<br>🏢 '+j.org).catch(()=>o.innerText='IP: Connected OK - Kano NG')}
+function ipTrack(){let o=document.getElementById('o1');o.innerText='Loading...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>{o.innerHTML='IP: '+j.ip+'<br>'+j.city; saveLog('IP Track',j.ip)}).catch(()=>o.innerText='Connected OK')}
 function genPass(){let c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789@#$%';let p='';for(let i=0;i<18;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('o2').innerText=p}
-function domL(){document.getElementById('o3').innerText='Domain: '+document.getElementById('dom').value+' | Status: Active ✓ | Cloudflare'}
-function makeQR(){let t=document.getElementById('qrtext').value||'https://auwaltech.com';document.getElementById('qrcode').innerHTML='';new QRCode(document.getElementById('qrcode'),{text:t,width:128,height:128})}
-function hashG(){let v=document.getElementById('hasht').value||'auwal';let h='';for(let i=0;i<v.length;i++)h+=v.charCodeAt(i).toString(16);document.getElementById('o5').innerText='MD5: '+h+'\nSHA256: '+(h+h).substring(0,32)}
-function emailC(){document.getElementById('o6').innerText=(document.getElementById('email').value||'email')+' - Safe ✓ No breach found'}
-function phoneC(){document.getElementById('o7').innerText='Number: '+document.getElementById('phone').value+' | MTN Nigeria | Kano'}
-function portC(){document.getElementById('o8').innerText='Scanning '+document.getElementById('port').value+' | 443 OPEN ✓ Secure'}
-function imeiC(){document.getElementById('o9').innerText='IMEI: '+document.getElementById('imei').value+' | Valid ✓ Original'}
-function wifiG(){let c='ABCDEFGHJK1234567890';let p='AUWAL-';for(let i=0;i<8;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('o10').innerText=p}
-function blk(){document.getElementById('o11').innerText='IP Clean ✓ Not Blacklisted'}
-function newsC(){document.getElementById('o12').innerText='📰 Latest: Protect your account with 2FA - 2026 Update'}
+function domL(){document.getElementById('o3').innerText='Domain: '+document.getElementById('dom').value+' Active ✓'}
+function makeQR(){let t=document.getElementById('qrtext').value||'https://auwal.com';document.getElementById('qrcode').innerHTML='';new QRCode(document.getElementById('qrcode'),{text:t,width:128,height:128})}
+function hashG(){let v=document.getElementById('hasht').value||'auwal';let h='';for(let i=0;i<v.length;i++)h+=v.charCodeAt(i).toString(16);document.getElementById('o5').innerText='Hash: '+h}
+function emailC(){document.getElementById('o6').innerText=(document.getElementById('email').value||'email')+' Safe ✓'; saveLog('Email Check',document.getElementById('email').value)}
+function phoneC(){document.getElementById('o7').innerText=document.getElementById('phone').value+' | MTN NG'; saveLog('Phone',document.getElementById('phone').value)}
+function portC(){document.getElementById('o8').innerText='Port '+document.getElementById('port').value+' OPEN ✓'}
+function imeiC(){document.getElementById('o9').innerText='IMEI Valid ✓'}
+function wifiG(){let c='ABCD1234567890';let p='WIFI-';for(let i=0;i<8;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('o10').innerText=p}
+function blk(){document.getElementById('o11').innerText='Clean ✓'}
+function newsC(){document.getElementById('o12').innerText='Cyber Update 2026'}
+
+function saveLog(type,val){let logs=JSON.parse(localStorage.getItem('auwal_logs')||'[]');logs.push({type,val,time:new Date().toLocaleString()});localStorage.setItem('auwal_logs',JSON.stringify(logs))}
 
 function biya(amount){
  let email=prompt('Saka Email dinka:'); if(!email) return;
@@ -105,9 +114,31 @@ function biya(amount){
   email:email,
   amount:amount*100,
   currency:'NGN',
-  callback:function(res){alert('✅ Biya yayi! Ref: '+res.reference+' - Ka turo screenshot a WhatsApp 07066216889');},
-  onClose:function(){alert('Ka soke biya');}
+  callback:function(res){
+   let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]');
+   pays.push({email,amount,ref:res.reference,time:new Date().toLocaleString()});
+   localStorage.setItem('auwal_pays',JSON.stringify(pays));
+   if(amount>=500){localStorage.setItem('auwal_paid','true'); isPaid=true; alert('✅ Biya yayi! An bude 7 premium tools!'); location.reload();}
+   else alert('✅ Biya yayi! Ref: '+res.reference);
+  },
+  onClose:function(){}
  }); handler.openIframe();
 }
+
+function openAdmin(){
+ let p=prompt('🔐 Saka Admin Password:');
+ if(p==='auwal2026' || p==='6561199329' || p==='07066216889'){
+  document.getElementById('adminPanel').style.display='block';
+  let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]');
+  let total=pays.reduce((s,x)=>s+x.amount,0);
+  document.getElementById('adminVis').innerText=visits.toLocaleString();
+  document.getElementById('adminTotal').innerText='₦'+total.toLocaleString();
+  let html=pays.length? pays.map(x=>`📧 ${x.email} | ₦${x.amount} | ${x.time}<br>Ref: ${x.ref}`).join('<hr>') : 'Babu wanda ya biya tukuna';
+  document.getElementById('adminList').innerHTML=html;
+  let logs=JSON.parse(localStorage.getItem('auwal_logs')||'[]');
+  if(logs.length) document.getElementById('adminList').innerHTML+='<br><br><b>Logs:</b><br>'+logs.slice(-20).map(l=>`${l.type}: ${l.val} - ${l.time}`).join('<br>');
+ } else if(p!==null) alert('Password kuskure!');
+}
+function clearData(){ if(confirm('Ka tabbata kana son share data?')){localStorage.removeItem('auwal_pays');localStorage.removeItem('auwal_logs');alert('An share!'); document.getElementById('adminPanel').style.display='none';} }
 </script>
 </body></html>
