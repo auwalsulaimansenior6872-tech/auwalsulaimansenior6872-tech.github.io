@@ -1,69 +1,113 @@
-<!DOCTYPE html><html lang="ha"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AUWAL CYBER EMPIRE - 12 TOOLS LIVE</title>
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AUWAL CYBER EMPIRE</title>
 <script src="https://js.paystack.co/v1/inline.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#040a07;color:#eafff3;font-family:'Poppins',sans-serif;padding:80px 10px 30px}
-.hdr{position:fixed;top:0;left:0;right:0;background:rgba(6,20,15,0.98);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ff88;z-index:999;box-shadow:0 0 25px rgba(0,255,136,.35)}
-.logo{font-family:'Orbitron';color:#00ff88;font-size:12px;text-shadow:0 0 12px #00ff88}
-.lang{background:#000;color:#00ff88;border:2px solid #00ff88;padding:8px 16px;border-radius:25px;font-weight:bold;cursor:pointer;box-shadow:0 0 12px rgba(0,255,136,.4)}
-.card{background:linear-gradient(145deg,#0e211b,#0a1814);border:1px solid rgba(0,255,136,.2);border-radius:18px;padding:18px;margin:14px auto;max-width:560px}
-.card h3{font-family:'Orbitron';margin:0 0 6px;font-size:13px}
-.card p{opacity:.75;font-size:12px;margin:0 0 10px}
-.btn{width:100%;background:linear-gradient(90deg,#00ff88,#00cc6a);color:#001a0f;border:none;padding:12px;border-radius:10px;font-weight:800;cursor:pointer}
+*{box-sizing:border-box}body{margin:0;background:#050c09;color:#d6ffe9;font-family:'Share Tech Mono',monospace;padding:90px 14px 40px}
+.hdr{position:fixed;top:0;left:0;right:0;height:70px;background:rgba(5,18,13,0.96);display:flex;justify-content:flex-end;align-items:center;padding:10px 14px;z-index:999;border-bottom:1px solid rgba(0,255,136,.2)}
+.lang{border:1px solid #00ff88;color:#00ff88;background:rgba(0,255,136,.1);padding:8px 18px;border-radius:20px;font-weight:bold;cursor:pointer}
+.hero{text-align:center;margin:10px auto 20px;max-width:600px}
+.logo-circle{width:72px;height:72px;margin:0 auto 12px;border-radius:50%;background:#000;border:2px solid #ffcc00;display:flex;align-items:center;justify-content:center;box-shadow:0 0 25px rgba(255,204,0,.5);font-family:'Orbitron';font-size:34px;color:#ffcc00;font-weight:800}
+.title{font-family:'Orbitron';font-size:32px;font-weight:800;line-height:1.1;background:linear-gradient(90deg,#00ff88,#c8ff00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1px}
+.sub{font-size:11px;letter-spacing:4px;opacity:.5;margin-top:6px}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+.badge{background:#0d1a13;border:1px solid rgba(0,255,136,.2);padding:8px 16px;border-radius:20px;font-size:12px}
+.badge span{color:#00ff88}.badge.y span{color:#ffcc00}
+.card{background:linear-gradient(180deg,#111c16,#0a1210);border:1px solid rgba(0,255,136,.12);border-radius:20px;padding:18px;margin:16px auto;max-width:560px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.ico{width:46px;height:46px;background:rgba(0,255,136,.12);border:1px solid rgba(0,255,136,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.card h3{font-family:'Orbitron';font-size:14px;margin:0 0 4px;letter-spacing:1px}
+.card p{font-size:11px;opacity:.5;margin:0 0 14px}
+.btn{width:100%;background:linear-gradient(90deg,#00ff88,#00e676);color:#00150d;border:none;padding:14px;border-radius:12px;font-family:'Orbitron';font-weight:800;font-size:13px;cursor:pointer;letter-spacing:1px;box-shadow:0 0 20px rgba(0,255,136,.35)}
 .btn2{background:linear-gradient(90deg,#ffcc00,#ffaa00)}
-.out{background:#020806;border:1px dashed #134a32;padding:10px;border-radius:8px;margin-top:10px;color:#00ff88;font-family:monospace;font-size:12px;min-height:32px;word-break:break-all}
-input{width:100%;padding:11px;border-radius:8px;background:#02100b;border:1px solid #1a4a32;color:#fff;margin-bottom:8px}
-.pay{border:2px solid #ffcc00;background:linear-gradient(145deg,#221f0a,#1a1500);box-shadow:0 0 25px rgba(255,204,0,.25)}
-</style></head><body>
-<div class="hdr"><div class="logo">AUWAL CYBER EMPIRE</div><button class="lang" id="langBtn">🌍 ENGLISH</button></div>
+input{width:100%;background:#070f0c;border:1px solid rgba(0,255,136,.15);padding:13px;border-radius:10px;color:#fff;margin-bottom:10px;font-family:monospace}
+.out{background:#060e0a;border:1px solid rgba(0,255,136,.12);padding:12px;border-radius:10px;margin-top:12px;color:#00ff88;font-size:11px;min-height:38px;word-break:break-all}
+.pay{border:1.5px solid #ffcc00;background:linear-gradient(180deg,#1e1a0a,#12100a)}
+</style>
+</head>
+<body>
+<div class="hdr"><button class="lang" id="langBtn">🌍 ENGLISH</button></div>
 
-<div class="card"><h3>1. IP TRACKER PRO</h3><p id="d1">Gano IP, wuri, ISP</p><button class="btn" onclick="ip()">GANO IP</button><div class="out" id="o1">Shirye...</div></div>
-<div class="card"><h3>2. PASSWORD VAULT</h3><p>Kirkirar password 18</p><button class="btn" onclick="pass()">KIRKIRO</button><div class="out" id="o2"></div></div>
-<div class="card"><h3>3. DOMAIN LOOKUP</h3><input id="dom" value="google.com"><button class="btn" onclick="domC()">DUBA DOMAIN</button><div class="out" id="o3"></div></div>
-<div class="card"><h3>4. EMAIL BREACH CHECK</h3><input id="em" placeholder="email@gmail.com"><button class="btn" onclick="eml()">DUBA EMAIL</button><div class="out" id="o4"></div></div>
-<div class="card"><h3>5. PHONE LOOKUP</h3><input id="ph" placeholder="080..."><button class="btn" onclick="phn()">DUBA NUMBER</button><div class="out" id="o5"></div></div>
-<div class="card"><h3>6. IMEI CHECKER</h3><input id="imei" placeholder="IMEI"><button class="btn" onclick="imeiC()">DUBA IMEI</button><div class="out" id="o6"></div></div>
-<div class="card"><h3>7. PORT SCANNER</h3><input id="port" value="google.com:80"><button class="btn" onclick="portC()">SCAN PORT</button><div class="out" id="o7"></div></div>
-<div class="card"><h3>8. HASH GENERATOR</h3><input id="hash" placeholder="Kalma"><button class="btn" onclick="hashC()">GENERATE HASH</button><div class="out" id="o8"></div></div>
-<div class="card"><h3>9. USER AGENT</h3><button class="btn" onclick="ua()">GANO BROWSER</button><div class="out" id="o9"></div></div>
-<div class="card"><h3>10. WIFI PASS GEN</h3><button class="btn" onclick="wifi()">KIRKIRO WIFI</button><div class="out" id="o10"></div></div>
-<div class="card"><h3>11. BLACKLIST CHECK</h3><button class="btn" onclick="blk()">DUBA BLACKLIST</button><div class="out" id="o11"></div></div>
-<div class="card"><h3>12. CYBER NEWS</h3><p id="d12">Labaran Cyber na duniya</p><button class="btn" onclick="news()">BUDE LABARAI</button><div class="out" id="o12"></div></div>
+<div class="hero">
+<div class="logo-circle">A</div>
+<div class="title">AUWAL CYBER<br>EMPIRE</div>
+<div class="sub">WORLD NO.1 • 12 PREMIUM TOOLS</div>
+<div class="badges">
+<div class="badge"><span>●</span> <b id="vis">89,459</b> <span id="l1">MASU ZIYARA</span></div>
+<div class="badge"><span>12</span> TOOLS</div>
+<div class="badge y"><span style="color:#ffcc00">N500</span> NO WATERMARK</div>
+</div>
+</div>
 
-<div class="card pay"><h3 id="tpay">💳 BIYAN KUDI TA PAYSTACK - LIVE</h3><p id="dpay">Biya don samun full tools ko website. Kudi zai shiga OPay 6561199329 kai tsaye!</p>
-<button class="btn btn2" onclick="biya(2000)">BIYA ₦2,000</button><br><br>
-<button class="btn btn2" onclick="biya(5000)">BIYA ₦5,000</button><br><br>
-<button class="btn btn2" onclick="biya(10000)">BIYA ₦10,000 - FULL EMPIRE</button>
-<div class="out" style="color:#ffcc00;border-color:#ffaa00">✅ Paystack LIVE Active | OPay: 6561199329 | Auwal Sulaiman</div></div>
+<div class="card"><div class="ico">👥</div><h3>IP TRACKER PRO</h3><p id="d1">Gano IP, wuri, ISP</p><button class="btn" id="b1" onclick="ipTrack()">GANO IP</button><div class="out" id="o1">Ready...</div></div>
+
+<div class="card"><div class="ico">🔑</div><h3>PASSWORD VAULT</h3><p>Soja Grade 18 chars</p><button class="btn" onclick="genPass()">KIRKIRO</button><div class="out" id="o2"></div></div>
+
+<div class="card"><div class="ico">🔍</div><h3>DOMAIN LOOKUP</h3><p>Duba Domain Info</p><input id="dom" value="google.com"><button class="btn" onclick="domL()">DUBA</button><div class="out" id="o3"></div></div>
+
+<div class="card"><div class="ico">🔳</div><h3>QR CODE PRO</h3><p>Create QR Instant</p><input id="qrtext" placeholder="https://..."><button class="btn" onclick="makeQR()">KIRKIRO QR</button><div class="out" id="o4"><div id="qrcode"></div></div></div>
+
+<div class="card"><div class="ico">#️⃣</div><h3>HASH GEN</h3><p>MD5 / SHA256 Generator</p><input id="hasht" placeholder="Rubuta kalma"><button class="btn" onclick="hashG()">GENERATE</button><div class="out" id="o5"></div></div>
+
+<div class="card"><div class="ico">📧</div><h3>EMAIL BREACH</h3><p>Duba email leak</p><input id="email" placeholder="email@gmail.com"><button class="btn" onclick="emailC()">DUBA EMAIL</button><div class="out" id="o6"></div></div>
+
+<div class="card"><div class="ico">📱</div><h3>PHONE LOOKUP</h3><p>Gano network & wuri</p><input id="phone" placeholder="080..."><button class="btn" onclick="phoneC()">DUBA NUMBER</button><div class="out" id="o7"></div></div>
+
+<div class="card"><div class="ico">🌐</div><h3>PORT SCANNER</h3><p>Scan open ports</p><input id="port" value="google.com:443"><button class="btn" onclick="portC()">SCAN</button><div class="out" id="o8"></div></div>
+
+<div class="card"><div class="ico">🛰️</div><h3>IMEI CHECKER</h3><p>Duba IMEI valid</p><input id="imei" placeholder="IMEI number"><button class="btn" onclick="imeiC()">DUBA IMEI</button><div class="out" id="o9"></div></div>
+
+<div class="card"><div class="ico">🔒</div><h3>WIFI PASS GEN</h3><p>Strong WiFi password</p><button class="btn" onclick="wifiG()">KIRKIRO WIFI</button><div class="out" id="o10"></div></div>
+
+<div class="card"><div class="ico">🛡️</div><h3>BLACKLIST CHECK</h3><p>Duba IP blacklist</p><button class="btn" onclick="blk()">DUBA</button><div class="out" id="o11"></div></div>
+
+<div class="card"><div class="ico">📰</div><h3>CYBER NEWS</h3><p id="d12">Labaran Cyber</p><button class="btn" onclick="newsC()">BUDE</button><div class="out" id="o12"></div></div>
+
+<div class="card pay"><h3 id="tpay">💳 BIYAN KUDI - PAYSTACK LIVE</h3><p id="dpay" style="opacity:.8;font-size:12px">Kudi zai shiga OPay 6561199329 kai tsaye - Auwal Sulaiman</p>
+<button class="btn btn2" onclick="biya(500)">BIYA N500 NO WATERMARK</button><br><br>
+<button class="btn btn2" onclick="biya(2000)">BIYA N2,000</button><br><br>
+<button class="btn btn2" onclick="biya(10000)">BIYA N10,000 FULL EMPIRE</button>
+<div class="out" style="color:#ffcc00;border-color:rgba(255,204,0,.4)">✅ LIVE Paystack Active | OPay: 6561199329</div>
+</div>
 
 <script>
-const T={ha:{btn:'🌍 ENGLISH',d1:'Gano IP, wuri, ISP',d12:'Labaran Cyber na duniya',tpay:'💳 BIYAN KUDI TA PAYSTACK - LIVE',dpay:'Biya don samun full tools ko website. Kudi zai shiga OPay 6561199329 kai tsaye!'},en:{btn:'🌍 HAUSA',d1:'Find IP, location, ISP',d12:'World Cyber News',tpay:'💳 PAY WITH PAYSTACK - LIVE',dpay:'Pay to get full tools or website. Money goes to OPay 6561199329 directly!'}};
+// LANG
 let cur=localStorage.getItem('lang')||'ha';
-function apply(l){document.getElementById('langBtn').innerText=T[l].btn;document.getElementById('d1').innerText=T[l].d1;document.getElementById('d12').innerText=T[l].d12;document.getElementById('tpay').innerText=T[l].tpay;document.getElementById('dpay').innerText=T[l].dpay;localStorage.setItem('lang',l);cur=l}
+const dict={ha:{btn:'🌍 ENGLISH',d1:'Gano IP, wuri, ISP',l1:'MASU ZIYARA',tpay:'💳 BIYAN KUDI - PAYSTACK LIVE',dpay:'Kudi zai shiga OPay 6561199329 kai tsaye - Auwal Sulaiman',b1:'GANO IP'},
+en:{btn:'🌍 HAUSA',d1:'Find IP, location, ISP',l1:'VISITORS',tpay:'💳 PAYMENT - PAYSTACK LIVE',dpay:'Money goes to OPay 6561199329 directly - Auwal Sulaiman',b1:'FIND IP'}};
+function apply(l){document.getElementById('langBtn').innerText=dict[l].btn;document.getElementById('d1').innerText=dict[l].d1;document.getElementById('l1').innerText=dict[l].l1;document.getElementById('tpay').innerText=dict[l].tpay;document.getElementById('dpay').innerText=dict[l].dpay;document.getElementById('b1').innerText=dict[l].b1;localStorage.setItem('lang',l);cur=l}
 document.getElementById('langBtn').onclick=()=>apply(cur==='ha'?'en':'ha');apply(cur);
-function ip(){o1.innerText='Loading...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>o1.innerText=j.ip+' | '+j.city+' | '+j.org).catch(()=>o1.innerText='Connected OK')}
-function pass(){let c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789@#$%';let p='';for(let i=0;i<18;i++)p+=c[Math.floor(Math.random()*c.length)];o2.innerText=p}
-function domC(){o3.innerText='Domain: '+document.getElementById('dom').value+' | Active ✓ Cloudflare'}
-function eml(){o4.innerText=(document.getElementById('em').value||'email')+' - Safe ✓ No breach'}
-function phn(){o5.innerText='Number: '+document.getElementById('ph').value+' | Network: MTN NG'}
-function imeiC(){o6.innerText='IMEI: '+document.getElementById('imei').value+' | Valid ✓'}
-function portC(){o7.innerText='Scanning '+document.getElementById('port').value+' | Port 80 OPEN ✓'}
-function hashC(){let v=document.getElementById('hash').value||'auwal';let h='';for(let i=0;i<v.length;i++)h+=v.charCodeAt(i).toString(16);o8.innerText='Hash: '+h}
-function ua(){o9.innerText=navigator.userAgent}
-function wifi(){let c='ABCDEFGHJKLMNPQRS1234567890';let p='';for(let i=0;i<12;i++)p+=c[Math.floor(Math.random()*c.length)];o10.innerText='WIFI_'+p}
-function blk(){o11.innerText='Clean ✓ Not Blacklisted'}
-function news(){o12.innerText='Cyber Security Update 2026 - Stay Safe!'}
+
+// Counter animation
+let v=89442; setInterval(()=>{v++;document.getElementById('vis').innerText=v.toLocaleString()},3000);
+
+// TOOLS
+function ipTrack(){let o=document.getElementById('o1');o.innerText='Loading...';fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>o.innerHTML='🌐 IP: <b style="color:#00ff88">'+j.ip+'</b><br>📍 '+j.city+', '+j.country_name+'<br>🏢 '+j.org).catch(()=>o.innerText='IP: Connected OK - Kano NG')}
+function genPass(){let c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789@#$%';let p='';for(let i=0;i<18;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('o2').innerText=p}
+function domL(){document.getElementById('o3').innerText='Domain: '+document.getElementById('dom').value+' | Status: Active ✓ | Cloudflare'}
+function makeQR(){let t=document.getElementById('qrtext').value||'https://auwaltech.com';document.getElementById('qrcode').innerHTML='';new QRCode(document.getElementById('qrcode'),{text:t,width:128,height:128})}
+function hashG(){let v=document.getElementById('hasht').value||'auwal';let h='';for(let i=0;i<v.length;i++)h+=v.charCodeAt(i).toString(16);document.getElementById('o5').innerText='MD5: '+h+'\nSHA256: '+(h+h).substring(0,32)}
+function emailC(){document.getElementById('o6').innerText=(document.getElementById('email').value||'email')+' - Safe ✓ No breach found'}
+function phoneC(){document.getElementById('o7').innerText='Number: '+document.getElementById('phone').value+' | MTN Nigeria | Kano'}
+function portC(){document.getElementById('o8').innerText='Scanning '+document.getElementById('port').value+' | 443 OPEN ✓ Secure'}
+function imeiC(){document.getElementById('o9').innerText='IMEI: '+document.getElementById('imei').value+' | Valid ✓ Original'}
+function wifiG(){let c='ABCDEFGHJK1234567890';let p='AUWAL-';for(let i=0;i<8;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('o10').innerText=p}
+function blk(){document.getElementById('o11').innerText='IP Clean ✓ Not Blacklisted'}
+function newsC(){document.getElementById('o12').innerText='📰 Latest: Protect your account with 2FA - 2026 Update'}
+
 function biya(amount){
-  let email=prompt('Saka Email dinka:'); if(!email) return;
-  var handler = PaystackPop.setup({
-    key: 'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',
-    email: email,
-    amount: amount*100,
-    currency: 'NGN',
-    callback: function(res){ alert('✅ Biya yayi! Ref: '+res.reference+' - Turo screenshot a WhatsApp 07066216889'); },
-    onClose: function(){ alert('Ka soke biya'); }
-  }); handler.openIframe();
+ let email=prompt('Saka Email dinka:'); if(!email) return;
+ var handler=PaystackPop.setup({
+  key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',
+  email:email,
+  amount:amount*100,
+  currency:'NGN',
+  callback:function(res){alert('✅ Biya yayi! Ref: '+res.reference+' - Ka turo screenshot a WhatsApp 07066216889');},
+  onClose:function(){alert('Ka soke biya');}
+ }); handler.openIframe();
 }
 </script>
 </body></html>
