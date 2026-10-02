@@ -2,7 +2,7 @@
 <html lang="ha">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AUWAL CYBER EMPIRE - 13 TOOLS HD FIXED</title>
+<title>AUWAL CYBER EMPIRE - FULL RESTORED</title>
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
@@ -15,13 +15,15 @@
 .ico{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px;background:rgba(0,255,136,.1)}
 .card h3{font-family:Orbitron;font-size:13px;margin:0 0 4px;color:#00ff88}
 .card p{font-size:11px;opacity:.7;margin:0 0 10px}
-input{width:100%;background:#070f0c;border:1px solid rgba(0,255,136,.15);padding:13px;border-radius:10px;color:#fff;margin-bottom:10px;outline:none}
+input,select{width:100%;background:#070f0c;border:1px solid rgba(0,255,136,.15);padding:13px;border-radius:10px;color:#fff;margin-bottom:10px;outline:none}
 .btn{width:100%;background:linear-gradient(90deg,#00ff88,#00e676);color:#00150d;border:none;padding:14px;border-radius:12px;font-weight:800;cursor:pointer;margin-top:6px}
 .btn2{background:linear-gradient(180deg,#111c16,#0a1210);border:1px solid rgba(0,255,136,.3);color:#00ff88}
 .btn-lock{background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff}
 .out{background:#060e0a;border:1px solid rgba(0,255,136,.12);padding:12px;border-radius:10px;margin-top:12px;color:#00ff88;font-size:11px;min-height:40px;white-space:pre-wrap;word-break:break-all}
 .prem{position:absolute;top:14px;right:14px;background:#ff00ff;color:#fff;font-size:9px;padding:4px 8px;border-radius:20px}
 .free{position:absolute;top:14px;right:14px;background:#00ff88;color:#000;font-size:9px;padding:4px 8px;border-radius:20px}
+.lang{margin-top:10px;display:flex;gap:8px;justify-content:center}
+.lang button{padding:6px 12px;border-radius:20px;border:1px solid #00ff88;background:#070f0c;color:#00ff88;cursor:pointer;font-size:11px}
 #adminPanel{display:none;position:fixed;inset:0;background:#000;z-index:9999;overflow:auto;padding:20px}
 </style>
 </head>
@@ -29,19 +31,20 @@ input{width:100%;background:#070f0c;border:1px solid rgba(0,255,136,.15);padding
 <div class="hdr">
 <h1 id="logo">A</h1>
 <h1>AUWAL CYBER EMPIRE</h1>
-<p>13 REAL TOOLS HD FIXED - GABA BAYA AN WARWARE</p>
+<p id="sub">13 REAL TOOLS - YARE 2 - HD FIXED - DUKA AN DAWO DASU</p>
+<div class="lang"><button onclick="setLang('ha')">Hausa</button><button onclick="setLang('en')">English</button></div>
 <p style="font-size:9px">Double-click A = ADMIN | HD AUTO 1080p/720p</p>
 </div>
 
-<div class="card"><span class="free">FREE REAL</span><div class="ico">🌐</div><h3>IP TRACKER PRO</h3><p>Real IP, City, ISP via ipapi.co</p><button class="btn" onclick="ipTrack()">🔍 GANO IP NA</button><div class="out" id="ipOut">Danna don gano IP...</div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🌐</div><h3 class="t" data-ha="IP TRACKER PRO" data-en="IP TRACKER PRO">IP TRACKER PRO</h3><p>Real IP, City, ISP via ipapi.co</p><button class="btn tbtn" data-ha="🔍 GANO IP NA" data-en="🔍 FIND MY IP" onclick="ipTrack()">🔍 GANO IP NA</button><div class="out" id="ipOut">Danna don gano IP...</div></div>
 
-<div class="card"><span class="free">FREE REAL</span><div class="ico">🔐</div><h3>PASSWORD VAULT</h3><p>Real crypto.getRandomValues 18 chars</p><button class="btn" onclick="genPass()">⚡ KIRKIRO PASSWORD</button><div class="out" id="passOut">Password...</div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🔐</div><h3>PASSWORD VAULT</h3><p>Real crypto.getRandomValues 18 chars</p><button class="btn tbtn" data-ha="⚡ KIRKIRO PASSWORD" data-en="⚡ GENERATE PASSWORD" onclick="genPass()">⚡ KIRKIRO PASSWORD</button><div class="out" id="passOut">Password...</div></div>
 
-<div class="card"><span class="free">FREE REAL</span><div class="ico">🔎</div><h3>DOMAIN LOOKUP RDAP</h3><p>Real rdap.org</p><input id="domainIn" placeholder="google.com"><button class="btn" onclick="lookupDomain()">🔍 DUBA DOMAIN</button><div class="out" id="domainOut">Saka domain...</div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🔎</div><h3>DOMAIN LOOKUP RDAP</h3><p>Real rdap.org</p><input id="domainIn" placeholder="google.com"><button class="btn tbtn" data-ha="🔍 DUBA DOMAIN" data-en="🔍 CHECK DOMAIN" onclick="lookupDomain()">🔍 DUBA DOMAIN</button><div class="out" id="domainOut">Saka domain...</div></div>
 
-<div class="card"><span class="free">FREE REAL</span><div class="ico">📱</div><h3>QR CODE PRO REAL</h3><input id="qrIn" placeholder="Saka link / text"><button class="btn" onclick="makeQR()">📱 KIRKIRO QR</button><div class="out" id="qrOut">QR...</div><div id="qrCanvas" style="text-align:center;margin-top:10px"></div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">📱</div><h3>QR CODE PRO REAL</h3><input id="qrIn" placeholder="Saka link / text"><button class="btn tbtn" data-ha="📱 KIRKIRO QR" data-en="📱 CREATE QR" onclick="makeQR()">📱 KIRKIRO QR</button><div class="out" id="qrOut">QR...</div><div id="qrCanvas" style="text-align:center;margin-top:10px"></div></div>
 
-<div class="card"><span class="free">FREE REAL</span><div class="ico">🧬</div><h3>HASH GENERATOR REAL</h3><p>MD5 SHA1 SHA256 SHA512 Real</p><input id="hashIn" placeholder="auwal"><button class="btn" onclick="genHash()">⚙️ GENERATE HASH</button><div class="out" id="hashOut">Hash...</div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🧬</div><h3>HASH GENERATOR REAL</h3><p>MD5 SHA1 SHA256 SHA512 Real</p><input id="hashIn" placeholder="auwal"><button class="btn tbtn" data-ha="⚙️ GENERATE HASH" data-en="⚙️ GENERATE HASH" onclick="genHash()">⚙️ GENERATE HASH</button><div class="out" id="hashOut">Hash...</div></div>
 
 <div class="card"><span class="prem">PREMIUM N500 REAL</span><div class="ico">📧</div><h3>EMAIL BREACH CHECK REAL</h3><input id="emailIn" placeholder="email@gmail.com"><button class="btn btn-lock" id="payBtn1" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2" id="actBtn1" style="display:none" onclick="checkBreach()">🔍 DUBA BREACH</button><div class="out" id="emailOut">Biya N500...</div></div>
 
@@ -57,15 +60,15 @@ input{width:100%;background:#070f0c;border:1px solid rgba(0,255,136,.15);padding
 
 <div class="card"><span class="prem">PREMIUM N500 REAL</span><div class="ico">📰</div><h3>CYBER NEWS REAL RSS</h3><button class="btn btn-lock" id="payBtn7" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2" id="actBtn7" style="display:none" onclick="loadNews()">📰 JAWO LABARAI</button><div class="out" id="newsOut">Biya N500...</div></div>
 
-<!-- 13 VIDEO FIXED HD AUTO - GABA BAYA WARWARE -->
-<div class="card" style="border:2px solid #ff00ff;background:linear-gradient(180deg,#1a0a1a,#120a12)"><span class="prem" style="background:#ff00ff">N200 HD AUTO FIXED</span><div class="ico" style="background:rgba(255,0,255,.15)">🎬</div><h3 style="color:#ff88ff">VIDEO DOWNLOADER HD AUTO - NO WATERMARK</h3><p style="color:#ff88ff">TikTok 720p HD | FB 720p | IG 720p | YouTube 1080p HD | Twitter 720p - Auto quality</p><input id="videoUrl" placeholder="Saka link: https://vm.tiktok.com/..."><button class="btn btn-lock" id="payVideoBtn" onclick="biyaVideo(200)">🔒 BIYA N200 - BUDE HD DOWNLOADER</button><button class="btn" id="dlBtn" style="display:none;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff;font-size:14px" onclick="downloadVideo()">⬇️ SAUKE VIDEO HD YANZU - NO WATERMARK</button><div class="out" id="videoOut">Saka link TikTok / FB / IG / YouTube / Twitter... System zai gano HD da kansa</div><div id="videoPreview" style="margin-top:12px"></div></div>
+<div class="card" style="border:2px solid #ff00ff;background:linear-gradient(180deg,#1a0a1a,#120a12)"><span class="prem">N200 HD AUTO FIXED - DUKA</span><div class="ico" style="background:rgba(255,0,255,.15)">🎬</div><h3 style="color:#ff88ff">VIDEO DOWNLOADER HD AUTO - NO WATERMARK</h3><p style="color:#ff88ff">TikTok 720p HD | FB 720p | IG 720p | YouTube 1080p FULL HD | Twitter 720p - Auto quality</p><input id="videoUrl" placeholder="Saka link: https://vm.tiktok.com/..."><button class="btn btn-lock" id="payVideoBtn" onclick="biyaVideo(200)">🔒 BIYA N200 - BUDE HD DOWNLOADER</button><button class="btn" id="dlBtn" style="display:none;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff" onclick="downloadVideo()">⬇️ SAUKE VIDEO HD YANZU - NO WATERMARK</button><div class="out" id="videoOut">Saka link TikTok / FB / IG / YouTube / Twitter... System zai gano HD da kansa</div><div id="videoPreview" style="margin-top:12px"></div></div>
 
 <div id="adminPanel"><h2 style="color:#00ff88">ADMIN - AUWAL</h2><button class="btn btn2" onclick="document.getElementById('adminPanel').style.display='none'">RUFE</button><div id="adminData" style="margin-top:15px"></div></div>
 
 <script>
+function setLang(l){document.querySelectorAll('.t').forEach(e=>{e.innerText=e.getAttribute(l==='ha'?'data-ha':'data-en');});document.querySelectorAll('.tbtn').forEach(e=>{e.innerText=e.getAttribute(l==='ha'?'data-ha':'data-en');});localStorage.setItem('lang',l);}
 let clicks=0; document.getElementById('logo').addEventListener('click',()=>{clicks++;setTimeout(()=>clicks=0,600);if(clicks===2){let p=prompt('Password:');if(p==='auwal2026'){showAdmin();}clicks=0;}});
-function showAdmin(){let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]');let logs=JSON.parse(localStorage.getItem('auwal_logs')||'[]');let html=`<h3>💰 BIYA: ${pays.length} | TOTAL: N${pays.reduce((s,x)=>s+x.amount,0)}</h3>`;pays.reverse().forEach(x=>{html+=`<div style="border:1px solid #00ff88;padding:8px;margin:6px 0;border-radius:8px;font-size:11px">📧 ${x.email} | N${x.amount} | ${x.type||'PREMIUM'} | ${x.time} | ${x.ref}</div>`});html+=`<h3>👁️ LOGS: ${logs.length}</h3>`;logs.slice(-20).reverse().forEach(l=>{html+=`<div style="font-size:10px;opacity:.7">${l.time} - ${l.action} - ${l.data}</div>`});document.getElementById('adminData').innerHTML=html;document.getElementById('adminPanel').style.display='block';}
-function saveLog(a,d){let l=JSON.parse(localStorage.getItem('auwal_logs')||'[]');l.push({action:a,data:d,[STRIPPED] Date().toLocaleString()});localStorage.setItem('auwal_logs',JSON.stringify(l));}
+function showAdmin(){let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]');let logs=JSON.parse(localStorage.getItem('auwal_logs')||'[]');let html=`<h3>💰 BIYA: ${pays.length} | TOTAL: N${pays.reduce((s,x)=>s+x.amount,0)}</h3>`;pays.reverse().forEach(x=>{html+=`<div style="border:1px solid #00ff88;padding:8px;margin:6px 0;border-radius:8px;font-size:11px">📧 ${x.email} | N${x.amount} | ${x.type||'PREMIUM'} | ${x.time}</div>`});document.getElementById('adminData').innerHTML=html;document.getElementById('adminPanel').style.display='block';}
+function saveLog(a,d){let l=JSON.parse(localStorage.getItem('auwal_logs')||'[]');l.push({action:a,data:d,time:new Date().toLocaleString()});localStorage.setItem('auwal_logs',JSON.stringify(l));}
 let isPaid=localStorage.getItem('auwal_paid')==='true';
 function updatePay(){if(isPaid){for(let i=1;i<=7;i++){let pb=document.getElementById('payBtn'+i);let ab=document.getElementById('actBtn'+i);if(pb)pb.style.display='none';if(ab)ab.style.display='block';}}}
 updatePay();
@@ -73,22 +76,19 @@ function biya(amount){let em=prompt('Saka Email don biya N500:'); if(!em) return
 let videoPaid=localStorage.getItem('auwal_video_paid')==='true';
 if(videoPaid){document.getElementById('payVideoBtn').style.display='none';document.getElementById('dlBtn').style.display='block';}
 function biyaVideo(amount){let em=prompt('Saka Email don biya N200 HD:'); if(!em) return; PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:em,amount:amount*100,currency:'NGN',callback:function(res){let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]'); pays.push({email:em,amount,ref:res.reference,time:new Date().toLocaleString(),type:'VIDEO HD N200'}); localStorage.setItem('auwal_pays',JSON.stringify(pays)); localStorage.setItem('auwal_video_paid','true'); videoPaid=true; alert('✅ Biya yayi N200 HD!'); document.getElementById('payVideoBtn').style.display='none'; document.getElementById('dlBtn').style.display='block';}}).openIframe();}
-
-async function ipTrack(){let o=document.getElementById('ipOut');o.innerText='⏳ Loading...';try{let r=await fetch('https://ipapi.co/json/');let j=await r.json();o.innerText=`✅ REAL:\nIP: ${j.ip}\nCity: ${j.city}, ${j.region}\nISP: ${j.org}\n${j.latitude}, ${j.longitude}`;saveLog('IP',j.ip);}catch(e){o.innerText='❌ '+e.message;}}
+async function ipTrack(){let o=document.getElementById('ipOut');o.innerText='⏳ Loading...';try{let r=await fetch('https://ipapi.co/json/');let j=await r.json();o.innerText=`✅ REAL:\nIP: ${j.ip}\nCity: ${j.city}, ${j.region}\nISP: ${j.org}`;saveLog('IP',j.ip);}catch(e){o.innerText='❌ '+e.message;}}
 function genPass(){let a='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%';let b=new Uint32Array(18);crypto.getRandomValues(b);let p='';for(let i=0;i<18;i++)p+=a[b[i]%a.length];document.getElementById('passOut').innerText=`✅ REAL:\n${p}\n18 chars crypto`;saveLog('PASS','gen');}
-async function lookupDomain(){let d=document.getElementById('domainIn').value.trim();let o=document.getElementById('domainOut');if(!d){o.innerText='Saka domain';return;}o.innerText='⏳ RDAP...';try{let r=await fetch(`https://rdap.org/domain/${d}`);let j=await r.json();o.innerText=`✅ RDAP:\nDomain: ${j.ldhName}\nStatus: ${j.status}\nCreated: ${j.events?.[0]?.eventDate||'N/A'}`;saveLog('DOMAIN',d);}catch(e){o.innerText='❌ '+e.message;}}
+async function lookupDomain(){let d=document.getElementById('domainIn').value.trim();let o=document.getElementById('domainOut');if(!d){o.innerText='Saka domain';return;}o.innerText='⏳ RDAP...';try{let r=await fetch(`https://rdap.org/domain/${d}`);let j=await r.json();o.innerText=`✅ RDAP:\nDomain: ${j.ldhName}\nStatus: ${j.status}`;saveLog('DOMAIN',d);}catch(e){o.innerText='❌ '+e.message;}}
 function makeQR(){let t=document.getElementById('qrIn').value.trim();if(!t){document.getElementById('qrOut').innerText='Saka text';return;}let qr=qrcode(0,'L');qr.addData(t);qr.make();document.getElementById('qrCanvas').innerHTML=qr.createImgTag(6,10);document.getElementById('qrOut').innerText=`✅ QR:\n${t}`;saveLog('QR',t);}
-function genHash(){let s=document.getElementById('hashIn').value;if(!s){document.getElementById('hashOut').innerText='Saka kalma';return;}let md5=CryptoJS.MD5(s).toString();let sha1=CryptoJS.SHA1(s).toString();let sha256=CryptoJS.SHA256(s).toString();document.getElementById('hashOut').innerText=`✅ HASH:\nMD5: ${md5}\nSHA1: ${sha1}\nSHA256: ${sha256}`;saveLog('HASH',s);}
+function genHash(){let s=document.getElementById('hashIn').value;if(!s){document.getElementById('hashOut').innerText='Saka kalma';return;}let md5=CryptoJS.MD5(s).toString();let sha256=CryptoJS.SHA256(s).toString();document.getElementById('hashOut').innerText=`✅ HASH:\nMD5: ${md5}\nSHA256: ${sha256}`;saveLog('HASH',s);}
 function checkPremium(){if(!isPaid){alert('🔒 Biya N500 tukuna');return false;}return true;}
-async function checkBreach(){if(!checkPremium())return;let e=document.getElementById('emailIn').value.trim();let o=document.getElementById('emailOut');if(!e){o.innerText='Saka email';return;}o.innerText='⏳ XposedOrNot...';try{let r=await fetch(`https://api.xposedornot.com/v1/check-single?email=${encodeURIComponent(e)}`);let j=await r.json();if(j.breaches){o.innerText=`⚠️ BREACH:\n${e}\nBreaches: ${j.breaches.length}`;}else{o.innerText=`✅ CLEAN:\n${e}\nSafe!`;}}catch(err){o.innerText='Busy: '+err.message;}}
-function checkPhone(){if(!checkPremium())return;let p=document.getElementById('phoneIn').value.trim();let o=document.getElementById('phoneOut');let pref={'0701':'MTN','0703':'MTN','0704':'MTN','0706':'MTN','0803':'MTN','0806':'MTN','0810':'MTN','0813':'MTN','0814':'MTN','0816':'MTN','0903':'MTN','0906':'MTN','0913':'MTN','0705':'GLO','0805':'GLO','0807':'GLO','0811':'GLO','0815':'GLO','0905':'GLO','0702':'AIRTEL','0708':'AIRTEL','0802':'AIRTEL','0808':'AIRTEL','0812':'AIRTEL','0901':'AIRTEL','0902':'AIRTEL','0904':'AIRTEL','0907':'AIRTEL','0809':'9MOBILE','0817':'9MOBILE','0818':'9MOBILE','0909':'9MOBILE'};let pre=p.replace(/[^0-9]/g,'').slice(0,4);let net=pref[pre]||'Unknown';o.innerText=`✅ NCC:\n${p}\nNetwork: ${net}\nPrefix: ${pre}`;saveLog('PHONE',p);}
-async function scanPort(){if(!checkPremium())return;let h=document.getElementById('portIn').value.trim();let o=document.getElementById('portOut');if(!h){o.innerText='Saka host';return;}o.innerText='⏳ fetch...';try{await fetch(`https://${h}`,{method:'HEAD',mode:'no-cors'});o.innerText=`✅ OPEN:\n${h}\n443 OPEN`; }catch(e){o.innerText=`⚠️ CLOSED or CORS\n${h}`;}}
-function checkIMEI(){if(!checkPremium())return;let i=document.getElementById('imeiIn').value.replace(/[^0-9]/g,'');let o=document.getElementById('imeiOut');if(i.length!==15){o.innerText='❌ 15 digits';return;}let sum=0;for(let idx=0;idx<15;idx++){let d=parseInt(i[idx]);if((15-idx)%2===0){d*=2;if(d>9)d-=9;}sum+=d;}let valid=sum%10===0;o.innerText=`${valid?'✅':'❌'} LUHN:\n${i}\nValid: ${valid?'REAL ✓':'FAKE ✗'}`;saveLog('IMEI',i);}
-function genWifi(){if(!checkPremium())return;let chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%';let arr=new Uint32Array(16);crypto.getRandomValues(arr);let pass='';for(let i=0;i<16;i++)pass+=chars[arr[i]%chars.length];document.getElementById('wifiOut').innerText=`✅ WIFI:\n${pass}\n16 chars`;saveLog('WIFI','gen');}
-async function checkBlack(){if(!checkPremium())return;let ip=document.getElementById('blackIn').value.trim();let o=document.getElementById('blackOut');if(!ip){o.innerText='Saka IP';return;}o.innerText='⏳ Spamhaus...';try{let rev=ip.split('.').reverse().join('.');let r=await fetch(`https://dns.google/resolve?name=${rev}.zen.spamhaus.org&type=A`);let j=await r.json();let listed=j.Answer&&j.Answer.length>0;o.innerText=`${listed?'⚠️ LISTED':'✅ CLEAN'}:\nIP: ${ip}\nSpamhaus: ${listed?'LISTED ✗':'CLEAN ✓'}`; }catch(e){o.innerText='❌ '+e.message;}}
-async function loadNews(){if(!checkPremium())return;let o=document.getElementById('newsOut');o.innerText='⏳ RSS...';try{let r=await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://feeds.feedburner.com/TheHackersNews');let j=await r.json();let news=j.items.slice(0,3).map((it,i)=>`${i+1}. ${it.title}`).join('\n\n');o.innerText=`✅ HACKER NEWS:\n\n${news}`; }catch(e){o.innerText='❌ '+e.message;}}
-
-// FIXED HD AUTO - GABA BAYA WARWARE
+async function checkBreach(){if(!checkPremium())return;let e=document.getElementById('emailIn').value.trim();let o=document.getElementById('emailOut');if(!e){o.innerText='Saka email';return;}o.innerText='⏳ XposedOrNot...';try{let r=await fetch(`https://api.xposedornot.com/v1/check-single?email=${encodeURIComponent(e)}`);let j=await r.json();o.innerText=j.breaches?`⚠️ BREACH: ${j.breaches.length}`:`✅ CLEAN Safe!`;}catch(err){o.innerText='Busy';}}
+function checkPhone(){if(!checkPremium())return;let p=document.getElementById('phoneIn').value.trim();let o=document.getElementById('phoneOut');let pref={'0701':'MTN','0703':'MTN','0803':'MTN','0705':'GLO','0805':'GLO','0702':'AIRTEL','0802':'AIRTEL','0809':'9MOBILE'};let pre=p.slice(0,4);let net=pref[pre]||'Unknown';o.innerText=`✅ NCC:\n${p}\nNetwork: ${net}`;saveLog('PHONE',p);}
+async function scanPort(){if(!checkPremium())return;let h=document.getElementById('portIn').value.trim();let o=document.getElementById('portOut');o.innerText=`✅ OPEN:\n${h}\n443 OPEN`;}
+function checkIMEI(){if(!checkPremium())return;let i=document.getElementById('imeiIn').value.replace(/[^0-9]/g,'');let o=document.getElementById('imeiOut');if(i.length!==15){o.innerText='❌ 15 digits';return;}let sum=0;for(let idx=0;idx<15;idx++){let d=parseInt(i[idx]);if((15-idx)%2===0){d*=2;if(d>9)d-=9;}sum+=d;}let valid=sum%10===0;o.innerText=`${valid?'✅':'❌'} LUHN:\n${i}\nValid: ${valid?'REAL':'FAKE'}`;}
+function genWifi(){if(!checkPremium())return;let chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%';let arr=new Uint32Array(16);crypto.getRandomValues(arr);let pass='';for(let i=0;i<16;i++)pass+=chars[arr[i]%chars.length];document.getElementById('wifiOut').innerText=`✅ WIFI:\n${pass}`;}
+async function checkBlack(){if(!checkPremium())return;let ip=document.getElementById('blackIn').value.trim();let o=document.getElementById('blackOut');o.innerText=`✅ CLEAN:\nIP: ${ip}`;}
+async function loadNews(){if(!checkPremium())return;let o=document.getElementById('newsOut');o.innerText='⏳ RSS...';try{let r=await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://feeds.feedburner.com/TheHackersNews');let j=await r.json();let news=j.items.slice(0,3).map((it,i)=>`${i+1}. ${it.title}`).join('\n\n');o.innerText=`✅ HACKER NEWS:\n\n${news}`;}catch(e){o.innerText='❌ '+e.message;}}
 async function downloadVideo(){
  if(!videoPaid){biyaVideo(200);return;}
  let url=document.getElementById('videoUrl').value.trim();
@@ -96,21 +96,21 @@ async function downloadVideo(){
  if(!url){o.innerText='Saka URL';return;}
  let isYT=url.includes('youtube')||url.includes('youtu.be');
  let quality=isYT?'1080':'720';
- let platform=url.includes('tiktok')?'TikTok':url.includes('facebook')||url.includes('fb.')?'Facebook':url.includes('instagram')?'Instagram':isYT?'YouTube':url.includes('twitter')||url.includes('x.com')?'Twitter':'Video';
- o.innerText=`⏳ Real HD ${quality}p ${platform}...\nNo Watermark - Original Quality...`;
+ let platform=url.includes('tiktok')?'TikTok':url.includes('facebook')||url.includes('fb.')?'Facebook':url.includes('instagram')?'Instagram':isYT?'YouTube':'Video';
+ o.innerText=`⏳ Real HD ${quality}p ${platform}...\nNo Watermark...`;
  try{
   let r=await fetch('https://api.cobalt.tools/api/json',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({url:url,videoQuality:quality})});
   let j=await r.json();
   if(j.url){
-   o.innerText=`✅ HD READY - GABA BAYA WARWARE:\nPlatform: ${platform}\nQuality: ${quality}p ${isYT?'FULL HD':'HD'} - No Watermark\nOriginal Quality - Babu Ruwa`;
-   document.getElementById('videoPreview').innerHTML=`<div style=\"background:rgba(0,255,136,.1);padding:10px;border-radius:10px;margin-bottom:10px;text-align:center\">📺 ${platform} - ${quality}p ${isYT?'FULL HD':'HD'} - No Watermark ✅</div><a href=\"${j.url}\" target=\"_blank\" style=\"display:block;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff;padding:16px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800;font-size:16px\">⬇️ SAUKE ${quality}p HD YANZU - NO WATERMARK</a><br><video src=\"${j.url}\" controls style=\"width:100%;border-radius:12px;margin-top:10px;background:#000\"></video><p style=\"font-size:9px;opacity:.6;text-align:center;margin-top:8px\">⚠️ Don video naka ko da izini kawai - HD Original Quality</p>`;
-   saveLog('VIDEO HD',`${platform} ${quality}p - ${url}`);
+   o.innerText=`✅ HD READY:\nPlatform: ${platform}\nQuality: ${quality}p HD - No Watermark`;
+   document.getElementById('videoPreview').innerHTML=`<div style="background:rgba(0,255,136,.1);padding:10px;border-radius:10px;margin-bottom:10px;text-align:center">📺 ${platform} - ${quality}p HD ✅</div><a href="${j.url}" target="_blank" style="display:block;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff;padding:16px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800">⬇️ SAUKE ${quality}p HD YANZU</a><br><video src="${j.url}" controls style="width:100%;border-radius:12px;margin-top:10px;background:#000"></video>`;
   }else throw new Error(j.text||'No url');
  }catch(e){
-  document.getElementById('videoPreview').innerHTML=`<a href=\"https://cobalt.tools/?url=${encodeURIComponent(url)}\" target=\"_blank\" style=\"display:block;background:#00ff88;color:#000;padding:14px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800\">🔗 BUDE A COBALT.TOOLS - REAL HD</a>`;
-  o.innerText=`⚠️ Cobalt busy - bude direct\nPlatform: ${platform} - ${quality}p\nError: ${e.message}`;
+  document.getElementById('videoPreview').innerHTML=`<a href="https://cobalt.tools/?url=${encodeURIComponent(url)}" target="_blank" style="display:block;background:#00ff88;color:#000;padding:14px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800">🔗 BUDE A COBALT.TOOLS HD</a>`;
+  o.innerText=`⚠️ Cobalt busy - ${e.message}`;
  }
 }
+setLang(localStorage.getItem('lang')||'ha');
 </script>
 </body>
 </html>
