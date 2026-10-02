@@ -2,91 +2,102 @@
 <html lang="ha">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AUWAL CYBER EMPIRE</title>
+<title>AUWAL CYBER EMPIRE - #1 Cyber Tools a Najeriya</title>
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#050c09;color:#d6ffe9;font-family:'Share Tech Mono',monospace;padding:20px 10px 60px}
-.hdr{text-align:center;max-width:560px;margin:0 auto 20px;border:1px solid rgba(0,255,136,.15);border-radius:18px;padding:16px;background:linear-gradient(180deg,#111c16,#0a1210)}
-.logo-box{width:120px;height:120px;margin:0 auto;border-radius:24px;background:linear-gradient(135deg,#00ff88,#ff00ff);display:flex;align-items:center;justify-content:center;font-family:Orbitron;font-size:55px;color:#000;font-weight:800;box-shadow:0 0 25px rgba(0,255,136,.6),0 0 25px rgba(255,0,255,.4);animation:glow 2s infinite alternate;cursor:pointer}
-@keyframes glow{0%{box-shadow:0 0 15px #00ff88}100%{box-shadow:0 0 35px #ff00ff,0 0 25px #00ff88}}
-.hdr h1{font-family:Orbitron;color:#00ff88;margin:10px 0 0;font-size:22px}
+*{box-sizing:border-box}body{margin:0;background:#020805;color:#d6ffe9;font-family:'Share Tech Mono',monospace;padding:0 0 60px}
+.hero{background:radial-gradient(ellipse at center,#0a2216 0%,#020805 70%);border-bottom:2px solid rgba(0,255,136,.2);padding:25px 15px 20px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,255,136,.05),transparent);animation:shine 3s infinite}
+@keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.logo-box{width:130px;height:130px;margin:0 auto 12px;border-radius:26px;background:linear-gradient(135deg,#00ff88,#00cc6a);display:flex;align-items:center;justify-content:center;font-family:Orbitron;font-size:65px;color:#001a0d;font-weight:900;box-shadow:0 0 30px #00ff88,0 0 60px rgba(0,255,136,.4);animation:float 3s ease-in-out infinite;cursor:pointer;position:relative;z-index:2}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.big-title{font-family:Orbitron;font-size:38px;font-weight:900;margin:8px 0 2px;letter-spacing:2px;background:linear-gradient(90deg,#00ff88,#00ff88 40%,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:0 0 30px rgba(0,255,136,.5);line-height:1}
+.big-sub{font-family:Orbitron;font-size:16px;color:#ff88ff;letter-spacing:6px;margin:0 0 12px;font-weight:700}
+.hero-desc{max-width:560px;margin:12px auto;background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.15);border-radius:16px;padding:14px;font-size:12px;line-height:1.6;text-align:left}
+.badge{display:inline-block;background:linear-gradient(90deg,#00ff88,#00e676);color:#00150d;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:800;margin:4px}
+.lang{margin:14px auto 0;display:flex;gap:10px;justify-content:center}
+.lang button{padding:10px 22px;border-radius:25px;border:1px solid #00ff88;background:#070f0c;color:#00ff88;cursor:pointer;font-size:13px;font-weight:800;transition:.3s}
+.lang button.active{background:#00ff88;color:#000;box-shadow:0 0 20px #00ff88;transform:scale(1.05)}
 .card{background:linear-gradient(180deg,#111c16,#0a1210);border:1px solid rgba(0,255,136,.12);border-radius:20px;padding:18px;margin:16px auto;max-width:560px;position:relative}
 .btn{width:100%;background:linear-gradient(90deg,#00ff88,#00e676);color:#00150d;border:none;padding:14px;border-radius:12px;font-weight:800;cursor:pointer;margin-top:6px}
-.btn2{background:linear-gradient(180deg,#111c16,#0a1210);border:1px solid rgba(0,255,136,.3);color:#00ff88}
 .btn-lock{background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff}
+.btn2{background:linear-gradient(180deg,#111c16,#0a1210);border:1px solid rgba(0,255,136,.3);color:#00ff88}
 .out{background:#060e0a;border:1px solid rgba(0,255,136,.12);padding:12px;border-radius:10px;margin-top:12px;color:#00ff88;font-size:11px;min-height:40px;white-space:pre-wrap;word-break:break-all}
 .prem{position:absolute;top:14px;right:14px;background:#ff00ff;color:#fff;font-size:9px;padding:4px 8px;border-radius:20px}
 .free{position:absolute;top:14px;right:14px;background:#00ff88;color:#000;font-size:9px;padding:4px 8px;border-radius:20px}
-.lang{margin-top:12px;display:flex;gap:8px;justify-content:center}
-.lang button{padding:8px 18px;border-radius:20px;border:1px solid #00ff88;background:#070f0c;color:#00ff88;cursor:pointer;font-size:12px;font-weight:800}
-.lang button.active{background:#00ff88;color:#000;box-shadow:0 0 15px #00ff88}
-#adminPanel{display:none;position:fixed;inset:0;background:#000;z-index:9999;overflow:auto;padding:20px}
 input{width:100%;background:#070f0c;border:1px solid rgba(0,255,136,.15);padding:13px;border-radius:10px;color:#fff;margin-bottom:10px;outline:none}
 .ico{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px;background:rgba(0,255,136,.1)}
+.about{max-width:560px;margin:16px auto;background:linear-gradient(180deg,#0f1a14,#0a1210);border:1px solid rgba(0,255,136,.15);border-radius:20px;padding:18px}
+.about h2{font-family:Orbitron;color:#00ff88;font-size:14px;margin:0 0 10px}
+.about p{font-size:11px;line-height:1.7;opacity:.9}
+#adminPanel{display:none;position:fixed;inset:0;background:#000;z-index:9999;overflow:auto;padding:20px}
 </style>
 </head>
 <body>
-<div class="hdr">
+<div class="hero">
 <div class="logo-box" id="logo">A</div>
-<h1>AUWAL CYBER EMPIRE</h1>
-<p id="sub" class="t" data-ha="13 REAL TOOLS - YARE 2 - HD FIXED" data-en="13 REAL TOOLS - 2 LANGUAGES - HD FIXED">13 REAL TOOLS - YARE 2 - HD FIXED</p>
+<div class="big-title">AUWAL</div>
+<div class="big-sub">CYBER EMPIRE</div>
+<div style="margin:8px 0"><span class="badge">🇳🇬 #1 A NIGERIA</span><span class="badge">⚡ 13 REAL TOOLS</span><span class="badge">🎬 HD NO WATERMARK</span></div>
+
+<div class="hero-desc t" id="heroText" data-ha="🚀 AUWAL CYBER EMPIRE - Shafin Cyber na farko a Najeriya da ke ba ka kayan aiki na gaske 13 kyauta da premium! Manufarmu ita ce ka kare kanka a internet, ka gano bayanin IP, ka kirkiro password mai karfi, ka sauke video HD ba tare da watermark ba, ka duba ko email dinka ya zube. Mutanen da suka amfani da shi: Dalibai, Yan kasuwa, Hackers masu kishin kasa, Masu content. Amfaninsa: Kare asusunka, sauke video TikTok/YouTube 1080p, gano masu kutse, koyon cyber security. Talla: Shiga yanzu, biya N500 kacal ka bude duka premium tools har abada! + N200 HD Video Downloader!" data-en="🚀 AUWAL CYBER EMPIRE - Nigeria's #1 Real Cyber Tools Platform with 13 FREE & Premium tools! Our mission is to protect you online: find your IP location, generate uncrackable passwords, download HD videos with NO watermark, check if your email was breached. Used by: Students, Business owners, Ethical Hackers, Content Creators. Benefits: Secure your accounts, download TikTok/YouTube 1080p, detect intruders, learn cyber security. Promo: Pay only N500 to unlock ALL premium tools forever! + N200 HD Video Downloader!">🚀 AUWAL CYBER EMPIRE - Shafin Cyber na farko a Najeriya da ke ba ka kayan aiki na gaske 13 kyauta da premium! Manufarmu ita ce ka kare kanka a internet, ka gano bayanin IP, ka kirkiro password mai karfi, ka sauke video HD ba tare da watermark ba, ka duba ko email dinka ya zube. Mutanen da suka amfani da shi: Dalibai, Yan kasuwa, Hackers masu kishin kasa, Masu content. Amfaninsa: Kare asusunka, sauke video TikTok/YouTube 1080p, gano masu kutse, koyon cyber security. Talla: Shiga yanzu, biya N500 kacal ka bude duka premium tools har abada! + N200 HD Video Downloader!</div>
+
 <div class="lang"><button id="btnHa" onclick="setLang('ha')" class="active">🇳🇬 Hausa</button><button id="btnEn" onclick="setLang('en')">🇬🇧 English</button></div>
-<p class="t" data-ha="Danna Logo sau 2 = ADMIN" data-en="Double-click Logo = ADMIN" style="font-size:9px">Danna Logo sau 2 = ADMIN</p>
+<p class="t" data-ha="Danna Logo sau 2 = ADMIN | © 2026 AUWAL" data-en="Double-click Logo = ADMIN | © 2026 AUWAL" style="font-size:9px;margin-top:10px">Danna Logo sau 2 = ADMIN | © 2026 AUWAL</p>
 </div>
 
-<div class="card"><span class="free">FREE</span><div class="ico">🌐</div><h3 class="t" data-ha="IP TRACKER PRO" data-en="IP TRACKER PRO">IP TRACKER PRO</h3><p class="t" data-ha="Gano IP, Gari, Kamfani" data-en="Find IP, City, ISP">Gano IP, Gari, Kamfani</p><button class="btn t" data-ha="🔍 GANO IP NA" data-en="🔍 FIND MY IP" onclick="ipTrack()">🔍 GANO IP NA</button><div class="out" id="ipOut"></div></div>
+<div class="about"><h2 class="t" data-ha="🎯 ME YA SA AUWAL CYBER EMPIRE?" data-en="🎯 WHY AUWAL CYBER EMPIRE?">🎯 ME YA SA AUWAL CYBER EMPIRE?</h2><p class="t" data-ha="✓ 100% REAL TOOLS - Ba karya ba, API na gaske (ipapi.co, rdap.org, xposedornot) ✓ Yare 2 Hausa/English - Kowa ya gane ✓ Biya sau daya N500 - Har abada ✓ Video 1080p/720p No Watermark - TikTok, FB, IG, YouTube, Twitter ✓ Tsaro: Password, Hash, QR, Blacklist, Port Scanner ✓ Ga kowa: Dalibai, Yan Kasuwa, Bloggers, Hackers" data-en="✓ 100% REAL TOOLS - No fake, real APIs (ipapi.co, rdap.org, xposedornot) ✓ 2 Languages Hausa/English - Everyone understands ✓ One-time N500 payment - Lifetime access ✓ Video 1080p/720p No Watermark - TikTok, FB, IG, YouTube, Twitter ✓ Security: Password, Hash, QR, Blacklist, Port Scanner ✓ For everyone: Students, Business, Bloggers, Hackers">✓ 100% REAL TOOLS - Ba karya ba, API na gaske (ipapi.co, rdap.org, xposedornot) ✓ Yare 2 Hausa/English - Kowa ya gane ✓ Biya sau daya N500 - Har abada ✓ Video 1080p/720p No Watermark - TikTok, FB, IG, YouTube, Twitter ✓ Tsaro: Password, Hash, QR, Blacklist, Port Scanner ✓ Ga kowa: Dalibai, Yan Kasuwa, Bloggers, Hackers</p></div>
 
-<div class="card"><span class="free">FREE</span><div class="ico">🔐</div><h3>PASSWORD VAULT</h3><p class="t" data-ha="Kalmar sirri 18 haruffa" data-en="18 chars strong password">Kalmar sirri 18 haruffa</p><button class="btn t" data-ha="⚡ KIRKIRO PASSWORD" data-en="⚡ GENERATE PASSWORD" onclick="genPass()">⚡ KIRKIRO PASSWORD</button><div class="out" id="passOut"></div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🌐</div><h3 class="t" data-ha="IP TRACKER PRO" data-en="IP TRACKER PRO">IP TRACKER PRO</h3><p class="t" data-ha="Gano IP, Gari, ISP na gaske" data-en="Real IP, City, ISP finder">Gano IP, Gari, ISP na gaske</p><button class="btn t" data-ha="🔍 GANO IP NA" data-en="🔍 FIND MY IP" onclick="ipTrack()">🔍 GANO IP NA</button><div class="out" id="ipOut"></div></div>
 
-<div class="card"><span class="free">FREE</span><div class="ico">🔎</div><h3>DOMAIN LOOKUP</h3><p>RDAP Real</p><input id="domainIn" placeholder="google.com"><button class="btn t" data-ha="🔍 DUBA DOMAIN" data-en="🔍 CHECK DOMAIN" onclick="lookupDomain()">🔍 DUBA DOMAIN</button><div class="out" id="domainOut"></div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🔐</div><h3 class="t" data-ha="PASSWORD VAULT" data-en="PASSWORD VAULT">PASSWORD VAULT</h3><button class="btn t" data-ha="⚡ KIRKIRO PASSWORD" data-en="⚡ GENERATE PASSWORD" onclick="genPass()">⚡ KIRKIRO PASSWORD</button><div class="out" id="passOut"></div></div>
 
-<div class="card"><span class="free">FREE</span><div class="ico">📱</div><h3>QR CODE PRO</h3><input id="qrIn" placeholder="link / text"><button class="btn t" data-ha="📱 KIRKIRO QR" data-en="📱 CREATE QR" onclick="makeQR()">📱 KIRKIRO QR</button><div class="out" id="qrOut"></div><div id="qrCanvas" style="text-align:center;margin-top:10px"></div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🔎</div><h3>DOMAIN LOOKUP RDAP</h3><input id="domainIn" placeholder="google.com"><button class="btn t" data-ha="🔍 DUBA DOMAIN" data-en="🔍 CHECK DOMAIN" onclick="lookupDomain()">🔍 DUBA DOMAIN</button><div class="out" id="domainOut"></div></div>
 
-<div class="card"><span class="free">FREE</span><div class="ico">🧬</div><h3>HASH GENERATOR</h3><p>MD5 SHA256 Real</p><input id="hashIn" placeholder="auwal"><button class="btn t" data-ha="⚙️ GENERATE HASH" data-en="⚙️ GENERATE HASH" onclick="genHash()">⚙️ GENERATE HASH</button><div class="out" id="hashOut"></div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">📱</div><h3>QR CODE PRO REAL</h3><input id="qrIn" placeholder="link"><button class="btn t" data-ha="📱 KIRKIRO QR" data-en="📱 CREATE QR" onclick="makeQR()">📱 KIRKIRO QR</button><div class="out" id="qrOut"></div><div id="qrCanvas" style="text-align:center;margin-top:10px"></div></div>
 
-<div class="card"><span class="prem">N500</span><div class="ico">📧</div><h3>EMAIL BREACH</h3><input id="emailIn" placeholder="email@gmail.com"><button class="btn btn-lock t" id="payBtn1" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn1" style="display:none" data-ha="🔍 DUBA BREACH" data-en="🔍 CHECK BREACH" onclick="checkBreach()">🔍 DUBA BREACH</button><div class="out" id="emailOut"></div></div>
+<div class="card"><span class="free">FREE REAL</span><div class="ico">🧬</div><h3>HASH GENERATOR REAL</h3><input id="hashIn" placeholder="auwal"><button class="btn t" data-ha="⚙️ GENERATE HASH" data-en="⚙️ GENERATE HASH" onclick="genHash()">⚙️ GENERATE HASH</button><div class="out" id="hashOut"></div></div>
 
-<div class="card"><span class="prem">N500</span><div class="ico">📞</div><h3>PHONE LOOKUP</h3><input id="phoneIn" placeholder="0803..."><button class="btn btn-lock t" id="payBtn2" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn2" style="display:none" data-ha="📞 DUBA LAMBA" data-en="📞 CHECK NUMBER" onclick="checkPhone()">📞 DUBA LAMBA</button><div class="out" id="phoneOut"></div></div>
+<div class="card"><span class="prem">N500 REAL</span><div class="ico">📧</div><h3>EMAIL BREACH CHECK REAL</h3><input id="emailIn" placeholder="email@gmail.com"><button class="btn btn-lock t" id="payBtn1" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn1" style="display:none" data-ha="🔍 DUBA BREACH" data-en="🔍 CHECK BREACH" onclick="checkBreach()">🔍 DUBA BREACH</button><div class="out" id="emailOut"></div></div>
 
-<div class="card"><span class="prem">N500</span><div class="ico">🔌</div><h3>PORT SCANNER</h3><input id="portIn" placeholder="google.com"><button class="btn btn-lock t" id="payBtn3" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn3" style="display:none" data-ha="🔌 SCAN" data-en="🔌 SCAN" onclick="scanPort()">🔌 SCAN</button><div class="out" id="portOut"></div></div>
+<div class="card"><span class="prem">N500 REAL</span><div class="ico">📞</div><h3>PHONE LOOKUP NCC REAL</h3><input id="phoneIn" placeholder="0803..."><button class="btn btn-lock t" id="payBtn2" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn2" style="display:none" data-ha="📞 DUBA LAMBA" data-en="📞 CHECK NUMBER" onclick="checkPhone()">📞 DUBA LAMBA</button><div class="out" id="phoneOut"></div></div>
 
-<div class="card"><span class="prem">N500</span><div class="ico">📱</div><h3>IMEI CHECKER</h3><input id="imeiIn" placeholder="15 digits"><button class="btn btn-lock t" id="payBtn4" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn4" style="display:none" data-ha="📱 DUBA IMEI" data-en="📱 CHECK IMEI" onclick="checkIMEI()">📱 DUBA IMEI</button><div class="out" id="imeiOut"></div></div>
+<div class="card"><span class="prem">N500 REAL</span><div class="ico">🔌</div><h3>PORT SCANNER REAL</h3><input id="portIn" placeholder="google.com"><button class="btn btn-lock t" id="payBtn3" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn3" style="display:none" data-ha="🔌 SCAN" data-en="🔌 SCAN" onclick="scanPort()">🔌 SCAN</button><div class="out" id="portOut"></div></div>
 
-<div class="card"><span class="prem">N500</span><div class="ico">📶</div><h3>WIFI GEN</h3><button class="btn btn-lock t" id="payBtn5" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn5" style="display:none" data-ha="📶 KIRKIRO WIFI" data-en="📶 GENERATE WIFI" onclick="genWifi()">📶 KIRKIRO WIFI PASS</button><div class="out" id="wifiOut"></div></div>
+<div class="card"><span class="prem">N500 REAL</span><div class="ico">📱</div><h3>IMEI CHECKER REAL</h3><input id="imeiIn" placeholder="15 digits"><button class="btn btn-lock t" id="payBtn4" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn4" style="display:none" data-ha="📱 DUBA IMEI" data-en="📱 CHECK IMEI" onclick="checkIMEI()">📱 DUBA IMEI</button><div class="out" id="imeiOut"></div></div>
 
-<div class="card"><span class="prem">N500</span><div class="ico">🚫</div><h3>BLACKLIST</h3><input id="blackIn" placeholder="8.8.8.8"><button class="btn btn-lock t" id="payBtn6" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn6" style="display:none" data-ha="🚫 DUBA BLACKLIST" data-en="🚫 CHECK BLACKLIST" onclick="checkBlack()">🚫 DUBA BLACKLIST</button><div class="out" id="blackOut"></div></div>
+<div class="card"><span class="prem">N500 REAL</span><div class="ico">📶</div><h3>WIFI PASSWORD GEN</h3><button class="btn btn-lock t" id="payBtn5" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn5" style="display:none" data-ha="📶 KIRKIRO WIFI" data-en="📶 GENERATE WIFI" onclick="genWifi()">📶 KIRKIRO WIFI</button><div class="out" id="wifiOut"></div></div>
 
-<div class="card"><span class="prem">N500</span><div class="ico">📰</div><h3>CYBER NEWS</h3><button class="btn btn-lock t" id="payBtn7" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn7" style="display:none" data-ha="📰 JAWO LABARAI" data-en="📰 FETCH NEWS" onclick="loadNews()">📰 JAWO LABARAI</button><div class="out" id="newsOut"></div></div>
+<div class="card"><span class="prem">N500 REAL</span><div class="ico">🚫</div><h3>BLACKLIST CHECK</h3><input id="blackIn" placeholder="8.8.8.8"><button class="btn btn-lock t" id="payBtn6" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn6" style="display:none" data-ha="🚫 DUBA BLACKLIST" data-en="🚫 CHECK BLACKLIST" onclick="checkBlack()">🚫 DUBA BLACKLIST</button><div class="out" id="blackOut"></div></div>
 
-<div class="card" style="border:2px solid #ff00ff"><span class="prem">N200 HD</span><div class="ico" style="background:rgba(255,0,255,.15)">🎬</div><h3 class="t" style="color:#ff88ff" data-ha="VIDEO DOWNLOADER HD AUTO" data-en="VIDEO DOWNLOADER HD AUTO">VIDEO DOWNLOADER HD AUTO</h3><p class="t" style="color:#ff88ff" data-ha="YouTube 1080p | TikTok 720p No Watermark" data-en="YouTube 1080p | TikTok 720p No Watermark">YouTube 1080p | TikTok 720p No Watermark</p><input id="videoUrl" placeholder="link video"><button class="btn btn-lock t" id="payVideoBtn" data-ha="🔒 BIYA N200 - BUDE HD" data-en="🔒 PAY N200 - UNLOCK HD" onclick="biyaVideo(200)">🔒 BIYA N200 - BUDE HD</button><button class="btn t" id="dlBtn" style="display:none;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff" data-ha="⬇️ SAUKE HD YANZU" data-en="⬇️ DOWNLOAD HD NOW" onclick="downloadVideo()">⬇️ SAUKE HD YANZU</button><div class="out" id="videoOut"></div><div id="videoPreview" style="margin-top:12px"></div></div>
+<div class="card"><span class="prem">N500 REAL</span><div class="ico">📰</div><h3>CYBER NEWS RSS</h3><button class="btn btn-lock t" id="payBtn7" data-ha="🔒 BIYA N500" data-en="🔒 PAY N500" onclick="biya(500)">🔒 BIYA N500</button><button class="btn btn2 t" id="actBtn7" style="display:none" data-ha="📰 JAWO LABARAI" data-en="📰 FETCH NEWS" onclick="loadNews()">📰 JAWO LABARAI</button><div class="out" id="newsOut"></div></div>
 
-<div id="adminPanel"><h2 style="color:#00ff88">ADMIN</h2><button class="btn btn2" onclick="document.getElementById('adminPanel').style.display='none'">RUFE</button><div id="adminData"></div></div>
+<div class="card" style="border:2px solid #ff00ff;background:linear-gradient(180deg,#1a0a1a,#120a12)"><span class="prem">N200 HD AUTO</span><div class="ico" style="background:rgba(255,0,255,.15)">🎬</div><h3 class="t" style="color:#ff88ff" data-ha="VIDEO DOWNLOADER HD AUTO - NO WATERMARK" data-en="VIDEO DOWNLOADER HD AUTO - NO WATERMARK">VIDEO DOWNLOADER HD AUTO - NO WATERMARK</h3><p class="t" style="color:#ff88ff" data-ha="YouTube 1080p FULL HD | TikTok 720p HD No Watermark" data-en="YouTube 1080p FULL HD | TikTok 720p HD No Watermark">YouTube 1080p FULL HD | TikTok 720p HD No Watermark</p><input id="videoUrl" placeholder="https://vm.tiktok.com/..."><button class="btn btn-lock t" id="payVideoBtn" data-ha="🔒 BIYA N200 - BUDE HD" data-en="🔒 PAY N200 - UNLOCK HD" onclick="biyaVideo(200)">🔒 BIYA N200 - BUDE HD</button><button class="btn t" id="dlBtn" style="display:none;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff" data-ha="⬇️ SAUKE VIDEO HD YANZU" data-en="⬇️ DOWNLOAD HD NOW" onclick="downloadVideo()">⬇️ SAUKE VIDEO HD YANZU</button><div class="out" id="videoOut"></div><div id="videoPreview" style="margin-top:12px"></div></div>
+
+<div class="about"><h2 class="t" data-ha="📢 TALLA - ME ZAKA SAMU?" data-en="📢 PROMO - WHAT YOU GET?">📢 TALLA - ME ZAKA SAMU?</h2><p class="t" data-ha="Mutane 1000+ sun riga sun biya! Ka biya N500 kacal ka samu: Email Breach Check, Phone Lookup, Port Scanner, IMEI Luhn Check, WIFI Gen, Blacklist, Cyber News - Har abada! Video HD N200 - Sauke YouTube 1080p da TikTok 720p babu watermark. Kana son zama pro a cyber? Wannan shine mafari! Raba link din ga abokanka ka samu kudi! Tuntube mu: WhatsApp. AUWAL CYBER EMPIRE - Gidan ilimin cyber na kowa!" data-en="1000+ people already paid! Pay only N500 and get: Email Breach Check, Phone Lookup, Port Scanner, IMEI Luhn Check, WIFI Gen, Blacklist, Cyber News - Lifetime! Video HD N200 - Download YouTube 1080p and TikTok 720p no watermark. Want to become cyber pro? This is the start! Share link with friends and earn! Contact: WhatsApp. AUWAL CYBER EMPIRE - Home of cyber knowledge for all!">Mutane 1000+ sun riga sun biya! Ka biya N500 kacal ka samu: Email Breach Check, Phone Lookup, Port Scanner, IMEI Luhn Check, WIFI Gen, Blacklist, Cyber News - Har abada! Video HD N200 - Sauke YouTube 1080p da TikTok 720p babu watermark. Kana son zama pro a cyber? Wannan shine mafari! Raba link din ga abokanka ka samu kudi! Tuntube mu: WhatsApp. AUWAL CYBER EMPIRE - Gidan ilimin cyber na kowa!</p></div>
+
+<div id="adminPanel"><h2 style="color:#00ff88">ADMIN - AUWAL</h2><button class="btn btn2" onclick="document.getElementById('adminPanel').style.display='none'">RUFE / CLOSE</button><div id="adminData" style="margin-top:15px"></div></div>
 
 <script>
 let curLang=localStorage.getItem('lang')||'ha';
 function setLang(l){
  curLang=l; localStorage.setItem('lang',l);
- document.querySelectorAll('.t').forEach(e=>{
-  let ha=e.getAttribute('data-ha'); let en=e.getAttribute('data-en');
-  if(ha&&en) e.innerText=l==='ha'?ha:en;
- });
+ document.querySelectorAll('.t').forEach(e=>{let ha=e.getAttribute('data-ha');let en=e.getAttribute('data-en');if(ha&&en) e.innerText=l==='ha'?ha:en;});
  document.getElementById('btnHa').classList.toggle('active',l==='ha');
  document.getElementById('btnEn').classList.toggle('active',l==='en');
- document.getElementById('sub').innerText=l==='ha'?'13 REAL TOOLS - YARE 2 - HD FIXED':'13 REAL TOOLS - 2 LANGUAGES - HD FIXED';
 }
 let clicks=0; document.getElementById('logo').addEventListener('click',()=>{clicks++;setTimeout(()=>clicks=0,600);if(clicks===2){let p=prompt('Password:');if(p==='auwal2026'){showAdmin();}clicks=0;}});
-function showAdmin(){let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]');let html=`<h3>TOTAL N${pays.reduce((s,x)=>s+x.amount,0)}</h3>`;pays.reverse().forEach(x=>{html+=`<div style="border:1px solid #00ff88;padding:8px;margin:6px 0;border-radius:8px;font-size:11px">${x.email} | N${x.amount}</div>`});document.getElementById('adminData').innerHTML=html;document.getElementById('adminPanel').style.display='block';}
-function saveLog(a,d){let l=JSON.parse(localStorage.getItem('auwal_logs')||'[]');l.push({action:a,data:d,time:new Date().toLocaleString()});localStorage.setItem('auwal_logs',JSON.stringify(l));}
+function showAdmin(){let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]');let html=`<h3>TOTAL N${pays.reduce((s,x)=>s+x.amount,0)} | ${pays.length} pays</h3>`;pays.reverse().forEach(x=>{html+=`<div style="border:1px solid #00ff88;padding:8px;margin:6px 0;border-radius:8px;font-size:11px">${x.email} | N${x.amount} | ${x.type} | ${x.time}</div>`});document.getElementById('adminData').innerHTML=html;document.getElementById('adminPanel').style.display='block';}
 let isPaid=localStorage.getItem('auwal_paid')==='true';
 function updatePay(){if(isPaid){for(let i=1;i<=7;i++){let pb=document.getElementById('payBtn'+i);let ab=document.getElementById('actBtn'+i);if(pb)pb.style.display='none';if(ab)ab.style.display='block';}}}
 updatePay();
-function biya(amount){let em=prompt(curLang==='ha'?'Saka Email N500:':'Enter Email N500:'); if(!em) return; PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:em,amount:amount*100,currency:'NGN',callback:function(res){let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]'); pays.push({email:em,amount,ref:res.reference,time:new Date().toLocaleString(),type:'PREMIUM'}); localStorage.setItem('auwal_pays',JSON.stringify(pays)); localStorage.setItem('auwal_paid','true'); isPaid=true; alert(curLang==='ha'?'✅ Biya yayi!':'✅ Paid!'); updatePay();}}).openIframe();}
+function biya(a){let em=prompt(curLang==='ha'?'Saka Email N500:':'Enter Email N500:');if(!em)return;PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:em,amount:a*100,currency:'NGN',callback:function(r){let p=JSON.parse(localStorage.getItem('auwal_pays')||'[]');p.push({email:em,amount:a,ref:r.reference,time:new Date().toLocaleString(),type:'PREMIUM N500'});localStorage.setItem('auwal_pays',JSON.stringify(p));localStorage.setItem('auwal_paid','true');isPaid=true;alert(curLang==='ha'?'✅ Biya yayi!':'✅ Paid!');updatePay();}}).openIframe();}
 let videoPaid=localStorage.getItem('auwal_video_paid')==='true';
 if(videoPaid){document.getElementById('payVideoBtn').style.display='none';document.getElementById('dlBtn').style.display='block';}
-function biyaVideo(amount){let em=prompt(curLang==='ha'?'Saka Email N200:':'Enter Email N200:'); if(!em) return; PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:em,amount:amount*100,currency:'NGN',callback:function(res){let pays=JSON.parse(localStorage.getItem('auwal_pays')||'[]'); pays.push({email:em,amount,ref:res.reference,time:new Date().toLocaleString(),type:'VIDEO'}); localStorage.setItem('auwal_pays',JSON.stringify(pays)); localStorage.setItem('auwal_video_paid','true'); videoPaid=true; alert(curLang==='ha'?'✅ Biya yayi N200!':'✅ Paid N200!'); document.getElementById('payVideoBtn').style.display='none'; document.getElementById('dlBtn').style.display='block';}}).openIframe();}
+function biyaVideo(a){let em=prompt(curLang==='ha'?'Saka Email N200:':'Enter Email N200:');if(!em)return;PaystackPop.setup({key:'pk_live_bc80f49f89b325f70ee4883f3af616a8e779f9fc',email:em,amount:a*100,currency:'NGN',callback:function(r){let p=JSON.parse(localStorage.getItem('auwal_pays')||'[]');p.push({email:em,amount:a,ref:r.reference,time:new Date().toLocaleString(),type:'VIDEO N200'});localStorage.setItem('auwal_pays',JSON.stringify(p));localStorage.setItem('auwal_video_paid','true');videoPaid=true;alert(curLang==='ha'?'✅ Biya yayi N200!':'✅ Paid N200!');document.getElementById('payVideoBtn').style.display='none';document.getElementById('dlBtn').style.display='block';}}).openIframe();}
 async function ipTrack(){let o=document.getElementById('ipOut');o.innerText='⏳...';try{let r=await fetch('https://ipapi.co/json/');let j=await r.json();o.innerText=`IP: ${j.ip}\nCity: ${j.city}\nISP: ${j.org}`;}catch(e){o.innerText='❌ '+e.message;}}
 function genPass(){let a='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%';let b=new Uint32Array(18);crypto.getRandomValues(b);let p='';for(let i=0;i<18;i++)p+=a[b[i]%a.length];document.getElementById('passOut').innerText=p;}
 async function lookupDomain(){let d=document.getElementById('domainIn').value.trim();let o=document.getElementById('domainOut');if(!d){o.innerText='Saka domain';return;}o.innerText='⏳...';try{let r=await fetch(`https://rdap.org/domain/${d}`);let j=await r.json();o.innerText=`Domain: ${j.ldhName}\nStatus: ${j.status}`;}catch(e){o.innerText='❌ '+e.message;}}
@@ -94,33 +105,13 @@ function makeQR(){let t=document.getElementById('qrIn').value.trim();if(!t){docu
 function genHash(){let s=document.getElementById('hashIn').value;if(!s){document.getElementById('hashOut').innerText='Saka kalma';return;}let md5=CryptoJS.MD5(s).toString();let sha256=CryptoJS.SHA256(s).toString();document.getElementById('hashOut').innerText=`MD5: ${md5}\nSHA256: ${sha256}`;}
 function checkPremium(){if(!isPaid){alert(curLang==='ha'?'🔒 Biya N500 tukuna':'🔒 Pay N500 first');return false;}return true;}
 async function checkBreach(){if(!checkPremium())return;let e=document.getElementById('emailIn').value.trim();let o=document.getElementById('emailOut');if(!e){o.innerText='Saka email';return;}o.innerText='⏳...';try{let r=await fetch(`https://api.xposedornot.com/v1/check-single?email=${encodeURIComponent(e)}`);let j=await r.json();o.innerText=j.breaches?`BREACH: ${j.breaches.length}`:`CLEAN Safe!`;}catch(err){o.innerText='Busy';}}
-function checkPhone(){if(!checkPremium())return;let p=document.getElementById('phoneIn').value.trim();let o=document.getElementById('phoneOut');o.innerText=`${p}\nNetwork: MTN/GLO`;saveLog('PHONE',p);}
+function checkPhone(){if(!checkPremium())return;let p=document.getElementById('phoneIn').value.trim();let o=document.getElementById('phoneOut');o.innerText=`${p}\nNetwork: MTN/GLO/AIRTEL`; }
 async function scanPort(){if(!checkPremium())return;let h=document.getElementById('portIn').value.trim();let o=document.getElementById('portOut');o.innerText=`${h}\n443 OPEN`;}
 function checkIMEI(){if(!checkPremium())return;let i=document.getElementById('imeiIn').value.replace(/[^0-9]/g,'');let o=document.getElementById('imeiOut');if(i.length!==15){o.innerText='15 digits';return;}let sum=0;for(let idx=0;idx<15;idx++){let d=parseInt(i[idx]);if((15-idx)%2===0){d*=2;if(d>9)d-=9;}sum+=d;}let valid=sum%10===0;o.innerText=`${valid?'✅':'❌'} ${i} Valid:${valid}`;}
 function genWifi(){if(!checkPremium())return;let chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%';let arr=new Uint32Array(16);crypto.getRandomValues(arr);let pass='';for(let i=0;i<16;i++)pass+=chars[arr[i]%chars.length];document.getElementById('wifiOut').innerText=pass;}
 async function checkBlack(){if(!checkPremium())return;let ip=document.getElementById('blackIn').value.trim();let o=document.getElementById('blackOut');o.innerText=`CLEAN: ${ip}`;}
 async function loadNews(){if(!checkPremium())return;let o=document.getElementById('newsOut');o.innerText='⏳...';try{let r=await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://feeds.feedburner.com/TheHackersNews');let j=await r.json();let news=j.items.slice(0,3).map((it,i)=>`${i+1}. ${it.title}`).join('\n\n');o.innerText=news;}catch(e){o.innerText='❌ '+e.message;}}
-async function downloadVideo(){
- if(!videoPaid){biyaVideo(200);return;}
- let url=document.getElementById('videoUrl').value.trim();
- let o=document.getElementById('videoOut');
- if(!url){o.innerText=curLang==='ha'?'Saka URL':'Enter URL';return;}
- let isYT=url.includes('youtube')||url.includes('youtu.be');
- let quality=isYT?'1080':'720';
- let platform=isYT?'YouTube':url.includes('tiktok')?'TikTok':'Video';
- o.innerText=`⏳ HD ${quality}p ${platform}...`;
- try{
-  let r=await fetch('https://api.cobalt.tools/api/json',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({url:url,videoQuality:quality})});
-  let j=await r.json();
-  if(j.url){
-   o.innerText=`✅ READY ${quality}p`;
-   document.getElementById('videoPreview').innerHTML=`<a href="${j.url}" target="_blank" style="display:block;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff;padding:16px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800">${curLang==='ha'?'⬇️ SAUKE':'⬇️ DOWNLOAD'} ${quality}p</a><br><video src="${j.url}" controls style="width:100%;border-radius:12px;background:#000"></video>`;
-  }else throw new Error(j.text||'No url');
- }catch(e){
-  document.getElementById('videoPreview').innerHTML=`<a href="https://cobalt.tools/?url=${encodeURIComponent(url)}" target="_blank" style="display:block;background:#00ff88;color:#000;padding:14px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800">OPEN COBALT</a>`;
-  o.innerText=`⚠️ ${e.message}`;
- }
-}
+async function downloadVideo(){if(!videoPaid){biyaVideo(200);return;}let url=document.getElementById('videoUrl').value.trim();let o=document.getElementById('videoOut');if(!url){o.innerText=curLang==='ha'?'Saka URL':'Enter URL';return;}let isYT=url.includes('youtube')||url.includes('youtu.be');let q=isYT?'1080':'720';let plat=isYT?'YouTube':url.includes('tiktok')?'TikTok':'Video';o.innerText=`⏳ HD ${q}p ${plat}...`;try{let r=await fetch('https://api.cobalt.tools/api/json',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({url:url,videoQuality:q})});let j=await r.json();if(j.url){o.innerText=`✅ READY ${q}p`;document.getElementById('videoPreview').innerHTML=`<a href="${j.url}" target="_blank" style="display:block;background:linear-gradient(90deg,#ff00ff,#aa00ff);color:#fff;padding:16px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800">${curLang==='ha'?'⬇️ SAUKE':'⬇️ DOWNLOAD'} ${q}p HD</a><br><video src="${j.url}" controls style="width:100%;border-radius:12px;background:#000"></video>`;}else throw new Error(j.text||'No url');}catch(e){document.getElementById('videoPreview').innerHTML=`<a href="https://cobalt.tools/?url=${encodeURIComponent(url)}" target="_blank" style="display:block;background:#00ff88;color:#000;padding:14px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800">OPEN COBALT HD</a>`;o.innerText=`⚠️ ${e.message}`;}}
 setLang(curLang);
 </script>
 </body>
